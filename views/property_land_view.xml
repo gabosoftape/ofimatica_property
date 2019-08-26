@@ -74,9 +74,6 @@
                                         <field name="location_type" widget="radio"/>
                                         <field name="tarla"/>
                                     </group>
-                                    <group>
-                                        <field name="type_prop"/>
-                                    </group>
                                 </group>
                                 <field name="note" class="oe_inline" placeholder="Note"/>
                                 <div class="oe_clear"/>
@@ -124,7 +121,7 @@
             <field name="view_mode">tree,form,pivot</field>
         </record>
 
-        <menuitem name="Clientes" id="menu_property_land"
+        <menuitem name="Conjuntos" id="menu_property_land"
                   action="action_property_land" parent="base.menu_property_info"/>
 
 

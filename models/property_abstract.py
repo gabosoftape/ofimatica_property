@@ -33,8 +33,6 @@ class PropertyProperty(models.AbstractModel):
     region_id = fields.Char(string="NIT")
     asset_number = fields.Char(string="NIIF", index=True)
 
-    type_prop = fields.Selection([('patrimony','Patrimonio'),('rent','Arrendada'),
-                                  ('mix','Mixta'),('concession','Concession')], string="Tipo de Propiedad")
 
 
     class_number = fields.Char(string="Class")

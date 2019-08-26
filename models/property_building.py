@@ -13,16 +13,17 @@ class PropertyBuilding(models.Model):
     _inherit = 'property.property'
 
     land_id = fields.Many2one('property.land', string='Land')
-
-    categ_id = fields.Many2one('property.building.categ', string="Category")
-    room_ids = fields.One2many('property.room', 'building_id', string="Rooms")
+    type_prop = fields.Selection([('patrimony', 'Patrimonio'), ('rent', 'Arrendada'),
+                                  ('mix', 'Mixta'), ('concession', 'Concession')], string="Tipo de Propiedad")
+    categ_id = fields.Many2one('property.building.categ', string="Categoria")
+    room_ids = fields.One2many('property.room', 'building_id', string="Lugares")
     features_ids = fields.One2many('property.features', 'building_id', string="Features")
 
-    administrator_id = fields.Many2one('res.partner', string="Administrator", domain=[('is_company', '=', False)])
+    administrator_id = fields.Many2one('res.partner', string="Administrador", domain=[('is_company', '=', False)])
 
-    purpose_parent_id = fields.Many2one('property.building.purpose', string="Purpose building",
+    purpose_parent_id = fields.Many2one('property.building.purpose', string="Proposito Edificacion",
                                         domain=[('parent_id', '=', False)])
-    purpose_id = fields.Many2one('property.building.purpose', string="Purpose building for",
+    purpose_id = fields.Many2one('property.building.purpose', string="Edificacion para",
                                  domain="[('parent_id','=',purpose_parent_id)]")
 
     data_pif = fields.Date(string="Data PIF")
@@ -96,6 +97,8 @@ class PropertyBuilding(models.Model):
                                           store=True)  # Scusi
     surface_cleaning_windows = fields.Float(string="Surface cleaning window", compute="_cleaning_windows",
                                             store=True)  # Scgeam
+    rented_room = fields.Boolean()
+    tenant_id = fields.Many2one('res.partner', string="Arrendatario")
 
     @api.onchange('purpose_parent_id')
     def onchange_purpose_parent_id(self):

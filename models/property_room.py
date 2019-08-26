@@ -49,9 +49,6 @@ class PropertyRoom(models.Model):
         ('staircase', 'Staircase'),
     ], string="Room usage", help="The purpose of using the room")
 
-    rented_room = fields.Boolean()
-    tenant_id = fields.Many2one('res.partner', string="Tenant")
-
     last_maintenance = fields.Date()
     technical_condition = fields.Selection([(0,'Missing'),(1,'Unsatisfactory'),(3,'good'),(5,'very good')],
                                            group_operator='avg')

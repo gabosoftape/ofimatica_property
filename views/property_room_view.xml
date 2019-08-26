@@ -53,10 +53,6 @@
                                 <group>
                                     <field name="floor_type"/>
                                     <field name="usage"/>
-                                    <field name="rented_room"/>
-                                </group>
-                                <group>
-                                    <field name="tenant_id" attrs="{'invisible': [('rented_room', '=', False)]}"/>
                                 </group>
                                 </group>
                             </page>

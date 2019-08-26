@@ -36,7 +36,7 @@
                             </button>
                             <button class="oe_stat_button" name="attachment_tree_view" type="object"
                                     icon="fa-files-o">
-                                <field string="Documente" name="doc_count" widget="statinfo"/>
+                                <field string="Documentos" name="doc_count" widget="statinfo"/>
                             </button>
                         </div>
 
@@ -47,12 +47,11 @@
                         </div>
                         <group>
                             <group string="Identification">
-                                <field name="region_id"/>
-                                <field name="owner_id"/>
-                                <field name="asset_number"/>
+                                <field name="type_prop"/>
+                                <field name="administrator_id"/>
                             </group>
 
-                            <group string="Adress">
+                            <group string="Direccion">
                                 <div class="o_address_format">
                                     <field name="street" placeholder="Street..." class="o_address_street"/>
 
@@ -71,59 +70,21 @@
                         <notebook>
                             <page string="General">
                                 <group>
-                                    <group>
                                         <field name="administrator_id"/>
                                         <field name="land_id"/>
-                                        <field name="data_pif"/>
-                                    </group>
-                                    <group>
+                                        <field name="rented_room"/>
+                                </group>
+                                <group>
+                                        <field name="tenant_id" attrs="{'invisible': [('rented_room', '=', False)]}"/>
                                         <field name="type_prop"/>
                                         <field name="purpose_parent_id"/>
                                         <field name="purpose_id"/>
-                                    </group>
+
                                 </group>
                                 <field name="note" class="oe_inline" placeholder="Note"/>
                                 <div class="oe_clear"/>
                             </page>
-                            <page string="Acquisition">
-                                <group>
-                                    <group>
-                                        <field name="acquisition_mode_id"/>
-                                        <field name="date_acquisition"/>
-                                        <field name="doc_acquisition"/>
-                                    </group>
-                                    <group>
-                                        <field name="categ_id"/>
-                                        <field name="surface"/>
-                                    </group>
-                                </group>
-                            </page>
-                            <page string="Organization">
-                                <group>
-                                    <group>
-                                        <field name="cost_center_id"/>
-                                        <field name="order_number"/>
-                                    </group>
-                                    <group>
-                                        <field name="class_number"/>
-                                        <field name="class_code"/>
-                                    </group>
-                                </group>
-                            </page>
-                            <page string="Structure">
-                                <group>
-                                    <group>
-                                        <field name="roof_structure"/>
-                                    </group>
-                                </group>
-                                <field name="features_ids">
-                                    <tree editable="bootom">
-                                        <field name="categ"/>
-                                        <field name="number"/>
-                                    </tree>
-                                </field>
-                            </page>
-                            <page string="Rooms">
+                            <page string="Lugares">
                                 <field name="room_ids">
                                     <tree editable="bootom">
                                         <field name="name"/>
