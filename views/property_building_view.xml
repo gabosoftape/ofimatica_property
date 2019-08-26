@@ -221,7 +221,7 @@
             <field name="view_mode">tree,form,pivot</field>
         </record>
 
-        <menuitem name="Casas" id="menu_property_building"
+        <menuitem name="Inmuebles" id="menu_property_building"
                   action="action_property_building" parent="base.menu_property_info"/>
 
 
