@@ -12,8 +12,6 @@
                     <field name="name"/>
                     <field name="owner_id"/>
                     <field name="location_type"/>
-                    <field name="tarla"/>
-                    <field name="parcela"/>
                     <field name="city"/>
                     <field name="categ_id"/>
                     <field name="surface" sum="surface"  />
@@ -52,7 +50,6 @@
                             <group string="Datos de Identificacion">
                                 <field name="region_id"/>
                                 <field name="owner_id"/>
-                                <field name="asset_number"/>
                             </group>
 
                             <group string="Direccion">
@@ -76,10 +73,6 @@
                                     <group>
                                         <field name="location_type" widget="radio"/>
                                         <field name="tarla"/>
-                                        <field name="parcela"/>
-                                        <field name="sector"/>
-                                        <field name="bloc_fizic"/>
-                                        <field name="carte"/>
                                     </group>
                                     <group>
                                         <field name="type_prop"/>
@@ -87,42 +80,6 @@
                                 </group>
                                 <field name="note" class="oe_inline" placeholder="Note"/>
                                 <div class="oe_clear"/>
-                            </page>
-                            <page string="Datos de adquisición">
-                                <group>
-                                    <group>
-                                        <field name="acquisition_mode_id"/>
-                                        <field name="date_acquisition"/>
-                                        <field name="doc_acquisition"/>
-                                    </group>
-                                    <group>
-                                        <field name="categ_id"/>
-                                    </group>
-                                </group>
-                            </page>
-
-
-                            <page string="Organización">
-                                <group>
-                                <group>
-                                    <field name="cost_center_id"/>
-                                    <field name="order_number"/>
-                                </group>
-                                <group>
-                                    <field name="class_number"/>
-                                    <field name="class_code"/>
-                                </group>
-                                </group>
-                            </page>
-
-                            <page string="Otra informacion">
-                                <group>
-                                    <group>
-                                    <field name="surface"/>
-                                </group>
-
-                                </group>
-
                             </page>
                         </notebook>
 

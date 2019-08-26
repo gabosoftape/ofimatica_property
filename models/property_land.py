@@ -15,8 +15,8 @@ class PropertyLand(models.Model):
 
     location_type = fields.Selection([('CR', 'Conjunto Residencial'), ('E', 'Edificio')], default='CR')
 
-    tarla = fields.Char()  # required=True)
-    parcela = fields.Char(string="Parcela")
+    tarla = fields.Char('Telefono')  # required=True)
+    parcela = fields.Char(string="Foto")
     sector = fields.Char(string="Sector catastral")
     bloc_fizic = fields.Char(string="Cedula catastral")
 
