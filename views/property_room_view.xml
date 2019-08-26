@@ -56,17 +56,6 @@
                                 </group>
                                 </group>
                             </page>
-                            <page string="Surfaces">
-                                <group>
-                                    <field name="surface_disinsection"/>
-                                    <field name="surface_cleaning_floor"/>
-                                    <field name="surface_cleaning_doors"/>
-                                    <field name="surface_cleaning_windows"/>
-                                </group>
-                                <group>
-
-                                </group>
-                            </page>
                         </notebook>
                     </sheet>
                 </form>

@@ -12,94 +12,30 @@ class PropertyBuilding(models.Model):
     _description = "Building"
     _inherit = 'property.property'
 
-    land_id = fields.Many2one('property.land', string='Land')
-    type_prop = fields.Selection([('patrimony', 'Patrimonio'), ('rent', 'Arrendada'),
-                                  ('mix', 'Mixta'), ('concession', 'Concession')], string="Tipo de Propiedad")
+    land_id = fields.Many2one('property.land', string='Conjunto')
+    type_prop = fields.Selection([('apto', 'Apartamento'), ('casa', 'Casa'),
+                                  ('park','Parqueadero'),('study','Apartaestudio')], string="Tipo de Propiedad")
     categ_id = fields.Many2one('property.building.categ', string="Categoria")
     room_ids = fields.One2many('property.room', 'building_id', string="Lugares")
     features_ids = fields.One2many('property.features', 'building_id', string="Features")
 
-    administrator_id = fields.Many2one('res.partner', string="Administrador", domain=[('is_company', '=', False)])
+    administrator_id = fields.Many2one('res.partner', string="Propietario", domain=[('is_company', '=', False)])
 
-    purpose_parent_id = fields.Many2one('property.building.purpose', string="Proposito Edificacion",
-                                        domain=[('parent_id', '=', False)])
-    purpose_id = fields.Many2one('property.building.purpose', string="Edificacion para",
-                                 domain="[('parent_id','=',purpose_parent_id)]")
+    purpose_prop = fields.Selection([('sale', 'Venta'), ('rent', 'Arriendo'),
+                                  ], string="Estado de la propiedad")
 
-    data_pif = fields.Date(string="Data PIF")
-
-    roof_structure = fields.Selection([
-        ('tile', 'wood roofing structure, tile roofing'),
-        ('metal', 'wood structure, sheet metal cover'),
-        ('asbestos', 'wood structure, roofing asbestos cement'),
-        ('bituminous', 'terrace structure, bituminous membrane cover')], string="Roof Structure")
-
-    surface_built = fields.Float(string="Surface built")  # Sc
-    surface_unfolded = fields.Float(string="Surface unfolded")  # Sd
-    surface_terraces = fields.Float(string="Surface terraces")  # Ster
-
-    surface_flameproof = fields.Float(string="Flameproof surface")  # Sig
-
-    surface_useful = fields.Float(string="Useful surface",
-                                  help="∑ Sbir + Scc +  Slb + Sit + Sgar + Smag + Slog + Sarh + Sves + Steh ",
-                                  compute="_compute_all_surface", store=True)  # Su
-
-    surface_common = fields.Float(string="Common surface",
-                                  help="The common area of the building ∑ Ssed + Shol + Scs + Sof + Sgrs + Sacc",
-                                  compute="_compute_all_surface", store=True)  # Scc
-
-    surface_office = fields.Float(string="Surface office", compute="_compute_all_surface", store=True)  # Sbir
-
-    surface_meeting = fields.Float(string="Surface meeting", compute="_compute_all_surface", store=True)  # Ssed
-    surface_lobby = fields.Float(string="Surface lobby", compute="_compute_all_surface", store=True)  # Shol
-    surface_staircase = fields.Float(string="Surface staircase", compute="_compute_all_surface", store=True)  # Scs
-    surface_kitchens = fields.Float(string="Surface kitchens", compute="_compute_all_surface", store=True)  # Sof
-    surface_sanitary = fields.Float(string="Surface sanitary", compute="_compute_all_surface", store=True)  # Sgrs
-
-    surface_laboratory = fields.Float(string="Surface laboratory", compute="_compute_all_surface", store=True)  # Slb
-    surface_it_endowments = fields.Float(string="Surface IT endowments", compute="_compute_all_surface",
-                                         store=True)  # Sit
-    surface_garage = fields.Float(string="Surface garage", compute="_compute_all_surface", store=True)  # Sgar
-    surface_warehouse = fields.Float(string="Surface warehouse", compute="_compute_all_surface", store=True)  # Smag
-    surface_log_warehouse = fields.Float(string="Surface logistic warehouse", compute="_compute_all_surface",
-                                         store=True)  # Slog
-    surface_archive = fields.Float(string="Surface archive", compute="_compute_all_surface", store=True)  # Sarh
-    surface_cloakroom = fields.Float(string="Surface cloakroom", compute="_compute_all_surface", store=True)  # Sves
-    surface_premises = fields.Float(string="Surface premises", compute="_compute_all_surface", store=True)  # Steh
-    surface_access = fields.Float(string="Surface access", compute="_compute_all_surface", store=True)  # Sacc
-
-    surface_cleaned_adm = fields.Float(string="Surface cleaned administratively",
-                                       compute="_compute_all_surface", store=True)  # Sca
-    surface_cleaned_ind = fields.Float(string="Surface cleaned industrial",
-                                       compute="_compute_all_surface", store=True)  # Sci
-
-    surface_cleaned_ext = fields.Float(string="External surface cleaned")  # Scext
-    surface_cleaned_tot = fields.Float(string="Total surface cleaned",
-                                       compute="_compute_all_surface", store=True)  # Stc
-
-    surface_derating_ext = fields.Float(string="Surface derating external")  # Sdze
-    surface_derating_int = fields.Float(string="Surface derating internal",  # Sdzi
-                                        compute="_compute_all_surface", store=True)  # Sdzt = ∑ Sdzi+Sdze
-    surface_derating = fields.Float(string="Total surface derating",
-                                    compute="_compute_all_surface", store=True)  # Sdzt = ∑ Sdzi+Sdze
-
-    surface_disinsection = fields.Float(string="Area of disinsection", compute="_compute_surface_disinsection",
-                                        store=True)  # Sds
-
-    surface_cleaning_carpet = fields.Float(string="Surface cleaning Carpet", compute="_cleaning_floor",
-                                           store=True)  # Sctextil
-    surface_cleaning_linoleum = fields.Float(string="Surface cleaning Linoleum", compute="_cleaning_floor",
-                                             store=True)  # Scgresie
-    surface_cleaning_wood = fields.Float(string="Surface cleaning Wood", compute="_cleaning_floor",
-                                         store=True)  # Scpodea
-
-    surface_cleaning_doors = fields.Float(string="Surface cleaning doors", compute="_cleaning_doors",
-                                          store=True)  # Scusi
-    surface_cleaning_windows = fields.Float(string="Surface cleaning window", compute="_cleaning_windows",
-                                            store=True)  # Scgeam
+    deposit = fields.Float('Deposito')
+    rent_domain = fields.Selection([('family', 'Familia'), ('one_person', 'Persona Sola'),('due','Pareja')], string="Estado de la propiedad")
     rented_room = fields.Boolean()
     tenant_id = fields.Many2one('res.partner', string="Arrendatario")
     admon_value = fields.Float(string='Valor Administracion')
+    dormitorios = fields.Float('Dormitorios')
+    baños = fields.Float('Baños')
+    balcones = fields.Float('Balcones')
+    mobiliario = fields.Selection([('amoblado', 'Amoblado'),('no_amoblado','Sin amoblar')], string="Mobiliario")
+    aditional_room = fields.Text('Habitaciones adicionales')
+    property_services = fields.Text('Servicios Publicos')
+    society_services = fields.Text('Servicios Internoss')
 
     @api.onchange('purpose_parent_id')
     def onchange_purpose_parent_id(self):
