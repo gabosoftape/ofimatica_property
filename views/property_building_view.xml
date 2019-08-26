@@ -71,12 +71,16 @@
                         <notebook>
                             <page string="Detalles">
                                 <group string="Acerca de la propiedad">
+                                    <field name="type_prop"/>
+                                    <field name="purpose_prop"/>
                                     <field name="administrator_id"/>
                                     <field name="land_id"/>
                                     <field name="rented_room"/>
                                     <field name="tenant_id" attrs="{'invisible': [('rented_room', '=', False)]}"/>
                                     <field name="rent_domain" />
                                     <field name="admon_value" />
+                                </group>
+                                <group string="Detalles del inmueble">
                                     <field name="dormitorios" />
                                     <field name="baños" />
                                     <field name="balcones" />
@@ -84,10 +88,6 @@
                                     <field name="aditional_room" />
                                     <field name="property_services" />
                                     <field name="society_services" />
-                                </group>
-                                <group>
-                                        <field name="type_prop"/>
-                                        <field name="purpose_prop"/>
                                 </group>
                                 <field name="note" class="oe_inline" placeholder="Note"/>
                                 <div class="oe_clear"/>
