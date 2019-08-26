@@ -25,33 +25,33 @@ class PropertyProperty(models.AbstractModel):
     zip = fields.Char(change_default=True)
     city = fields.Char()
     state_id = fields.Many2one("res.country.state", string='Estado', ondelete='restrict')
-    country_id = fields.Many2one('res.country', string='Pais', ondelete='restrict')
-    company_id = fields.Many2one('res.company', 'Company', index=True, default=_default_company)
+    country_id = fields.Many2one('res.country', string='País', ondelete='restrict')
+    company_id = fields.Many2one('res.company', 'Compañia', index=True, default=_default_company)
     active = fields.Boolean(default=True)
 
-    owner_id = fields.Many2one('res.user', string="Administrador" )
-    region_id = fields.Many2one('property.region', string="Region")
+    owner_id = fields.Many2one('res.users', string="Administrador", domain=[('active', '=', True)])
+    region_id = fields.Char(string="NIT")
     asset_number = fields.Char(string="Asset Number", index=True)
 
-    type_prop = fields.Selection([('patrimony','Patrimony'),('rent','Rent'),
-                                  ('loan','Loan'),('concession','Concession')], string="Property Type")
+    type_prop = fields.Selection([('patrimony','Patrimonio'),('rent','Arrendada'),
+                                  ('mix','Mixta'),('concession','Concession')], string="Tipo de Propiedad")
 
 
     class_number = fields.Char(string="Class")
-    class_code = fields.Char(string="Classification code")
-    cost_center_id = fields.Many2one('property.cost.center',string='Cost Center')
-    order_number = fields.Char(string='Order Number')
+    class_code = fields.Char(string="Codigo de clasificacion")
+    cost_center_id = fields.Many2one('property.cost.center',string='Centro de costos')
+    order_number = fields.Char(string='Numero de orden')
 
 
-    acquisition_mode_id = fields.Many2one('property.acquisition', string="Acquisition Mode")
-    date_acquisition = fields.Date(string="Acquisition Date")
-    doc_acquisition = fields.Char(string="Acquisition Document")
+    acquisition_mode_id = fields.Many2one('property.acquisition', string="Modo de adquisision")
+    date_acquisition = fields.Date(string="Fecha de adquisicion")
+    doc_acquisition = fields.Char(string="Documento de adquisicion")
 
     surface = fields.Float(string="Area")
 
     note = fields.Text()
 
-    doc_count = fields.Integer(string="Number of documents", compute='_get_attached_docs')
+    doc_count = fields.Integer(string="Numero de documentos", compute='_get_attached_docs')
 
 
     @api.multi
