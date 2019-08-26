@@ -102,7 +102,7 @@
                             </page>
 
 
-                            <page string="Organization">
+                            <page string="Organización">
                                 <group>
                                 <group>
                                     <field name="cost_center_id"/>
@@ -115,7 +115,7 @@
                                 </group>
                             </page>
 
-                            <page string="Surfaces">
+                            <page string="Otra informacion">
                                 <group>
                                     <group>
                                     <field name="surface"/>
