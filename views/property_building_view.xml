@@ -4,7 +4,7 @@
 
 
         <record id="view_property_building_tree" model="ir.ui.view">
-            <field name="name">Casas</field>
+            <field name="name">Inmuebles</field>
             <field name="model">property.building</field>
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
@@ -21,7 +21,7 @@
         </record>
 
         <record id="view_property_building_form" model="ir.ui.view">
-            <field name="name">Casas</field>
+            <field name="name">Inmueble</field>
             <field name="model">property.building</field>
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
@@ -196,7 +196,7 @@
 
 
         <record id="view_property_building_filter" model="ir.ui.view">
-            <field name="name">Casas</field>
+            <field name="name">Inmuebles</field>
             <field name="model">property.building</field>
             <field name="type">search</field>
             <field name="arch" type="xml">
@@ -215,7 +215,7 @@
 
 
         <record id="action_property_building" model="ir.actions.act_window">
-            <field name="name">Casas</field>
+            <field name="name">Inmuebles</field>
             <field name="res_model">property.building</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,pivot</field>
