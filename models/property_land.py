@@ -10,10 +10,10 @@ from datetime import datetime
 
 class PropertyLand(models.Model):
     _name = 'property.land'
-    _description = "Land"
+    _description = "Clientes"
     _inherit = 'property.property'
 
-    location_type = fields.Selection([('I', 'Intravilan'), ('E', 'Extravilan')], default='E')
+    location_type = fields.Selection([('CR', 'Conjunto Residencial'), ('E', 'Edificio')], default='CR')
 
     tarla = fields.Char()  # required=True)
     parcela = fields.Char(string="Parcela cadastrală")
@@ -26,3 +26,4 @@ class PropertyLand(models.Model):
 
 
     cod = fields.Char()
+

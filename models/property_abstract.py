@@ -18,18 +18,18 @@ class PropertyProperty(models.AbstractModel):
         return self.env['res.company']._company_default_get(self._name)
 
 
-    name = fields.Char(string="Name")
+    name = fields.Char(string="Nombre")
 
     street = fields.Char()
     street2 = fields.Char()
     zip = fields.Char(change_default=True)
     city = fields.Char()
-    state_id = fields.Many2one("res.country.state", string='State', ondelete='restrict')
-    country_id = fields.Many2one('res.country', string='Country', ondelete='restrict')
+    state_id = fields.Many2one("res.country.state", string='Estado', ondelete='restrict')
+    country_id = fields.Many2one('res.country', string='Pais', ondelete='restrict')
     company_id = fields.Many2one('res.company', 'Company', index=True, default=_default_company)
     active = fields.Boolean(default=True)
 
-    owner_id = fields.Many2one('res.partner', string="Owner" )
+    owner_id = fields.Many2one('res.user', string="Administrador" )
     region_id = fields.Many2one('property.region', string="Region")
     asset_number = fields.Char(string="Asset Number", index=True)
 
@@ -47,7 +47,7 @@ class PropertyProperty(models.AbstractModel):
     date_acquisition = fields.Date(string="Acquisition Date")
     doc_acquisition = fields.Char(string="Acquisition Document")
 
-    surface = fields.Float(string="Surface")
+    surface = fields.Float(string="Area")
 
     note = fields.Text()
 
@@ -64,7 +64,7 @@ class PropertyProperty(models.AbstractModel):
     def attachment_tree_view(self):
         domain = [('res_model', '=', self._name), ('res_id', 'in', self.ids)]
         return {
-            'name': 'Documente',
+            'name': 'Documentos',
             'domain': domain,
             'res_model': 'ir.attachment',
             'type': 'ir.actions.act_window',
