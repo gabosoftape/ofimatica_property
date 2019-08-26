@@ -16,13 +16,13 @@ class PropertyLand(models.Model):
     location_type = fields.Selection([('CR', 'Conjunto Residencial'), ('E', 'Edificio')], default='CR')
 
     tarla = fields.Char()  # required=True)
-    parcela = fields.Char(string="Parcela cadastrală")
-    sector = fields.Char(string="Sector cadastral")
-    bloc_fizic = fields.Char(string="Nr bloc fizic")
+    parcela = fields.Char(string="Parcela")
+    sector = fields.Char(string="Sector catastral")
+    bloc_fizic = fields.Char(string="Cedula catastral")
 
     carte = fields.Char(string="Carte funciară")
     utr = fields.Char(string="UTR")
-    categ_id = fields.Many2one('property.land.categ', string="Category")
+    categ_id = fields.Many2one('property.land.categ', string="Categoría")
 
 
     cod = fields.Char()
