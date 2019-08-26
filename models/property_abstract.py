@@ -31,7 +31,7 @@ class PropertyProperty(models.AbstractModel):
 
     owner_id = fields.Many2one('res.users', string="Administrador", domain=[('active', '=', True)])
     region_id = fields.Char(string="NIT")
-    asset_number = fields.Char(string="Asset Number", index=True)
+    asset_number = fields.Char(string="NIIF", index=True)
 
     type_prop = fields.Selection([('patrimony','Patrimonio'),('rent','Arrendada'),
                                   ('mix','Mixta'),('concession','Concession')], string="Tipo de Propiedad")
