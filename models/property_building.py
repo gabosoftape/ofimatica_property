@@ -99,6 +99,7 @@ class PropertyBuilding(models.Model):
                                             store=True)  # Scgeam
     rented_room = fields.Boolean()
     tenant_id = fields.Many2one('res.partner', string="Arrendatario")
+    admon_value = fields.Float(string='Valor Administracion')
 
     @api.onchange('purpose_parent_id')
     def onchange_purpose_parent_id(self):
