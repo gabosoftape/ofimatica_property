@@ -23,7 +23,5 @@ class PropertyLand(models.Model):
     carte = fields.Char(string="Carte funciară")
     utr = fields.Char(string="UTR")
     categ_id = fields.Many2one('property.land.categ', string="Categoría")
-
-
     cod = fields.Char()
 
