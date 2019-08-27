@@ -41,11 +41,19 @@
 
 
                         <div class="oe_title oe_left">
-                            <label for="name" string="Nombre del Nuevo cliente"/>
-                            <field name="foto" widget="image"/>
-                            <h1>
-                                <field name="name" placeholder="Nombre de conjunto, o edificio .. Ej: Quintas de Morelia..."/>
-                            </h1>
+                            <group>
+                                <group>
+                                    <field name="foto" widget="image"/>
+                                </group>
+                                <group>
+                                    <label for="name" string="Nombre del Nuevo cliente"/>
+                                    <h1>
+                                        <field name="name" placeholder="Nombre de conjunto, o edificio .. Ej: Quintas de Morelia..."/>
+                                    </h1>
+                                </group>
+
+
+                            </group>
                         </div>
                         <group>
                             <group string="Datos de Identificacion">
