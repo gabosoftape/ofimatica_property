@@ -89,7 +89,7 @@
             <field name="view_mode">tree,form,pivot</field>
         </record>
 
-        <menuitem name="Lugares" id="menu_property_room"
-                  action="action_property_room" parent="base.menu_property_info"/>
+        <!--<menuitem name="Lugares" id="menu_property_room"
+                  action="action_property_room" parent="base.menu_property_info"/> -->
     </data>
 </odoo>
