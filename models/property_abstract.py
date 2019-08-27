@@ -19,7 +19,7 @@ class PropertyProperty(models.AbstractModel):
 
 
     name = fields.Char(string="Nombre")
-
+    foto = fields.Binary()
     street = fields.Char()
     street2 = fields.Char()
     zip = fields.Char(change_default=True)
