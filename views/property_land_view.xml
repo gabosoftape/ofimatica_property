@@ -44,8 +44,6 @@
                             <group>
                                 <group>
                                     <field name="foto" widget="image"/>
-                                </group>
-                                <group>
                                     <label for="name" string="Nombre del Nuevo cliente"/>
                                     <h1>
                                         <field name="name" placeholder="Nombre de conjunto, o edificio .. Ej: Quintas de Morelia..."/>
