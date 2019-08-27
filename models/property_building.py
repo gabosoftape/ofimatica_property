@@ -13,6 +13,7 @@ class PropertyBuilding(models.Model):
     _inherit = 'property.property'
 
     land_id = fields.Many2one('property.land', string='Conjunto')
+    foto = fields.Binary()
     type_prop = fields.Selection([('apto', 'Apartamento'), ('casa', 'Casa'),
                                   ('park','Parqueadero'),('study','Apartaestudio')], string="Tipo de Propiedad")
     categ_id = fields.Many2one('property.building.categ', string="Categoria")
