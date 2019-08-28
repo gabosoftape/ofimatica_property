@@ -13,7 +13,6 @@
                     <field name="owner_id"/>
                     <field name="location_type"/>
                     <field name="city"/>
-                    <field name="categ_id"/>
                     <field name="surface" sum="surface"  />
                 </tree>
             </field>
@@ -74,7 +73,7 @@
                             <page string="General">
                                 <group>
                                     <group>
-                                        <field name="location_type" widget="radio"/>
+                                        <field name="location_type"/>
                                         <field name="tarla"/>
                                     </group>
                                 </group>
@@ -103,7 +102,6 @@
                 <search string="Search">
 
                     <field name="tarla"/>
-                    <field name="parcela"/>
                     <field name="owner_id"/>
                     <field name="city"/>
                     <separator/>
