@@ -13,17 +13,16 @@ class PropertyLand(models.Model):
     _description = "Clientes"
     _inherit = 'property.property'
 
-    location_type = fields.Selection([('CR', 'Conjunto Residencial'), ('E', 'Edificio')], default='CR')
+    location_type = fields.Many2one('property.land.type', string="Categoría")
 
     tarla = fields.Char('Telefono')  # required=True)
-    parcela = fields.Char(string="Foto")
     sector = fields.Char(string="Sector catastral")
     bloc_fizic = fields.Char(string="Cedula catastral")
 
     carte = fields.Char(string="Carte funciară")
     utr = fields.Char(string="UTR")
-    categ_id = fields.Many2one('property.land.categ', string="Categoría")
     cod = fields.Char()
+
 
 
 class tipoDePropiedad(models.Model):
