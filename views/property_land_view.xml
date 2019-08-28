@@ -71,17 +71,23 @@
                         </group>
                         <notebook>
                             <page string="General">
-                                <group>
                                     <group>
-                                        <field name="location_type"/>
-                                        <field name="tarla"/>
-                                        <field name="empresa_admin"/>
-                                        <field name="representante_legal"/>
-                                        <field name="administrador_delegado"/>
-                                        <field name="area_comun"/>
-                                        <field name="area_total"/>
+                                        <group string="Detalles Cliente">
+                                            <field name="location_type"/>
+                                            <field name="tarla"/>
+                                            <field name="area_comun"/>
+                                            <field name="area_total"/>
+                                        </group>
+                                        <group>
+                                            <group string="Detalle Empresa admin">
+                                                <field name="empresa_admin"/>
+                                                <field name="representante_legal"/>
+                                            </group>
+                                            <group string="Detalle Administrador">
+                                                <field name="administrador_delegado"/>
+                                            </group>
+                                        </group>
                                     </group>
-                                </group>
                                 <field name="note" class="oe_inline" placeholder="Note"/>
                                 <div class="oe_clear"/>
                             </page>
