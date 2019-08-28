@@ -25,3 +25,12 @@ class PropertyLand(models.Model):
     categ_id = fields.Many2one('property.land.categ', string="Categoría")
     cod = fields.Char()
 
+
+class tipoDePropiedad(models.Model):
+    _name = 'property.land.type'
+
+    codigo = fields.Char('Referencia', required=True)
+    nombre = fields.Char('Nombre', required=True)
+    descripcion = fields.Char('Descripcion')
+
+
