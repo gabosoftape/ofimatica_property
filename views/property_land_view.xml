@@ -75,6 +75,11 @@
                                     <group>
                                         <field name="location_type"/>
                                         <field name="tarla"/>
+                                        <field name="empresa_admin"/>
+                                        <field name="representante_legal"/>
+                                        <field name="administrador_delegado"/>
+                                        <field name="area_comun"/>
+                                        <field name="area_total"/>
                                     </group>
                                 </group>
                                 <field name="note" class="oe_inline" placeholder="Note"/>
