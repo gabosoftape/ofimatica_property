@@ -167,7 +167,6 @@ class PropertyCommonZones (models.Model):
 
 class PropertyPet (models.Model):
     _name = 'property.building.pet'
-    _rec_name = 'nombre'
 
     foto_placa = fields.Binary('Foto Placa')
     foto = fields.Binary('Foto Animal')
