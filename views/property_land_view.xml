@@ -73,7 +73,7 @@
                             <page string="General">
                                     <group>
                                         <group string="Detalles Cliente">
-                                            <field name="location_type"/>
+                                            <field name="location_type" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
                                             <field name="tarla"/>
                                             <field name="area_comun"/>
                                             <field name="area_total"/>
