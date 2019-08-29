@@ -151,3 +151,5 @@ class PropertyFeatures(models.Model):
     ], string='Features')
 
     number = fields.Integer()
+
+

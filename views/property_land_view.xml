@@ -133,8 +133,8 @@
             <field name="view_mode">tree,form,pivot</field>
         </record>
 
-        <menuitem name="Clientes" id="menu_property_land"
-                  action="action_property_land" parent="base.menu_property_info"/>
+       <!-- <menuitem name="Clientes" id="menu_property_land"
+                  action="action_property_land" parent="base.menu_property_info"/> -->
 
 
     </data>
