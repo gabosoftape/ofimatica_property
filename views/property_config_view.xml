@@ -1,51 +1,43 @@
 <?xml version="1.0" ?>
 <odoo>
     <data>
-
-        <record id="view_property_nomenclature_tree" model="ir.ui.view">
-            <field name="name">Nomenclatura</field>
-            <field name="model">property.nomenclature</field>
+         <!-- tree property_land_type -->
+        <record id="view_property_land_type_tree" model="ir.ui.view">
+            <field name="name">Tipos de Propiedad</field>
+            <field name="model">property.land.type</field>
+            <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="cod"/>
-                    <field name="name"/>
+                    <field name="codigo"/>
+                    <field name="nombre"/>
                 </tree>
             </field>
         </record>
-
-        <record id="view_property_nomenclature_form" model="ir.ui.view">
-            <field name="name">Nomenclatura</field>
-            <field name="model">property.nomenclature</field>
+        <record id="view_property_land_type_form" model="ir.ui.view">
+            <field name="name">Tipo de Propiedad</field>
+            <field name="model">property.land.type</field>
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <group>
-                            <field name="cod"/>
-                            <field name="name"/>
-                        </group>
-                        <group>
-                            <field name="categ"/>
-                            <field name="parent_id"/>
-                        </group>
+                            <field name="codigo"/>
+                            <field name="nombre"/>
+                            <field name="descripcion"/>
+
                     </group>
 
                 </form>
             </field>
         </record>
-
-
-        <record id="action_property_acquisition" model="ir.actions.act_window">
-            <field name="name">Adquisicion</field>
-            <field name="res_model">property.acquisition</field>
+         <record id="action_property_land_type" model="ir.actions.act_window">
+            <field name="name">Tipos de propiedad</field>
+            <field name="res_model">property.land.type</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_ids" eval="[(5, 0, 0),
-                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_property_nomenclature_tree')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('view_property_nomenclature_form')})]"/>
         </record>
 
-        <menuitem name="Adquisicion" id="menu_property_acquisition"
-                  action="action_property_acquisition" parent="base.menu_property_config"  sequence="101"/>
+
+        <menuitem name="Tipos de propiedad" id="menu_property_land_type"
+                  action="action_property_land_type" parent="base.menu_property_config"  sequence="101"/>
 
         <record id="action_property_building_purpose" model="ir.actions.act_window">
             <field name="name">Proposito de Inmueble</field>
