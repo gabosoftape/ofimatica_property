@@ -98,10 +98,29 @@
                                 </field>
                             </page>
                             <page string="Vehiculos">
-                                
+                               <field name="vehiculos_ids">
+                                    <tree editable="bootom">
+                                        <field name="foto"/>
+                                        <field name="tipo"/>
+                                        <field name="marca"/>
+                                        <field name="modelo"/>
+                                        <field name="placa"/>
+                                        <field name="color"/>
+                                        <field name="parqueadero"/>
+                                    </tree>
+                                </field>
                             </page>
                             <page string="Mascotas">
-
+                                <field name="mascotas_ids">
+                                    <tree editable="bootom">
+                                        <field name="foto_placa"/>
+                                        <field name="foto"/>
+                                        <field name="tipo"/>
+                                        <field name="raza"/>
+                                        <field name="nombre"/>
+                                        <field name="color"/>
+                                    </tree>
+                                </field>
                             </page>
                         </notebook>
 

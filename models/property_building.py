@@ -19,6 +19,7 @@ class PropertyBuilding(models.Model):
     categ_id = fields.Many2one('property.building.categ', string="Categoria")
     room_ids = fields.One2many('property.room', 'building_id', string="Lugares")
     vehiculos_ids = fields.One2many('property.vehicle', 'building_id', string="Vehiculos")
+    mascotas_ids = fields.One2many('property.pet', 'building_id',string="Mascotas")
     features_ids = fields.One2many('property.features', 'building_id', string="Features")
 
     administrator_id = fields.Many2one('res.partner', string="Propietario", domain=[('is_company', '=', False)])
