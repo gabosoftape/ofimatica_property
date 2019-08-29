@@ -30,6 +30,7 @@ class PropertyLand(models.Model):
 
 class tipoDePropiedad(models.Model):
     _name = 'property.land.type'
+    _rec_name = 'nombre'
 
     codigo = fields.Char('Referencia', required=True)
     nombre = fields.Char('Nombre', required=True)

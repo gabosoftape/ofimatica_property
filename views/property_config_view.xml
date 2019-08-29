@@ -3,7 +3,7 @@
     <data>
          <!-- tree property_land_type -->
         <record id="view_property_land_type_tree" model="ir.ui.view">
-            <field name="name">Tipos de Propiedad</field>
+            <field name="name">Tipos de inmueble</field>
             <field name="model">property.land.type</field>
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
@@ -14,7 +14,7 @@
             </field>
         </record>
         <record id="view_property_land_type_form" model="ir.ui.view">
-            <field name="name">Tipo de Propiedad</field>
+            <field name="name">Tipo de Inmueble</field>
             <field name="model">property.land.type</field>
             <field name="arch" type="xml">
                 <form>
@@ -29,56 +29,14 @@
             </field>
         </record>
          <record id="action_property_land_type" model="ir.actions.act_window">
-            <field name="name">Tipos de propiedad</field>
+            <field name="name">Tipos de inmueble</field>
             <field name="res_model">property.land.type</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
 
 
-        <menuitem name="Tipos de propiedad" id="menu_property_land_type"
+        <menuitem name="Tipos de Inmueble" id="menu_property_land_type"
                   action="action_property_land_type" parent="base.menu_property_config"  sequence="101"/>
-
-        <record id="action_property_building_purpose" model="ir.actions.act_window">
-            <field name="name">Proposito de Inmueble</field>
-            <field name="res_model">property.building.purpose</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_ids" eval="[(5, 0, 0),
-                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_property_nomenclature_tree')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('view_property_nomenclature_form')})]"/>
-        </record>
-
-        <menuitem name="Proposito de Inmueble" id="menu_property_building_purpose"
-                  action="action_property_building_purpose" parent="base.menu_property_config"  sequence="102"/>
-
-        <record id="action_property_region" model="ir.actions.act_window">
-            <field name="name">Region</field>
-            <field name="res_model">property.region</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_ids" eval="[(5, 0, 0),
-                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_property_nomenclature_tree')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('view_property_nomenclature_form')})]"/>
-        </record>
-
-        <menuitem name="Region" id="menu_property_region"
-                  action="action_property_region" parent="base.menu_property_config"  sequence="103"/>
-
-
-
-        <record id="action_property_room_usage" model="ir.actions.act_window">
-            <field name="name">Uso del Sitio</field>
-            <field name="res_model">property.room.usage</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_ids" eval="[(5, 0, 0),
-                (0, 0, {'view_mode': 'tree', 'view_id': ref('view_property_nomenclature_tree')}),
-                (0, 0, {'view_mode': 'form', 'view_id': ref('view_property_nomenclature_form')})]"/>
-        </record>
-
-        <menuitem name="Uso de Lugar" id="menu_property_room_usage"
-                  action="action_property_room_usage" parent="base.menu_property_config"  sequence="301"/>
-
     </data>
 </odoo>
