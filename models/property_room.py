@@ -14,7 +14,7 @@ class PropertyRoom(models.Model):
     _description = "Room"
 
     name = fields.Char(string="Number")
-    building_id = fields.Many2one('property.building', string='Building', required=True)
+    building_id = fields.Many2one('property.building', string='Inmueble', required=True)
 
     level = fields.Selection(selection_level)
 
