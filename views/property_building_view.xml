@@ -88,7 +88,7 @@
                                 <div class="oe_clear"/>
                             </page>
 
-                            <page string="Lugares">
+                            <page string="Zonas Comunes">
                                 <field name="room_ids">
                                     <tree editable="bootom">
                                         <field name="name"/>
@@ -96,6 +96,12 @@
                                         <field name="surface" sum="surface"/>
                                     </tree>
                                 </field>
+                            </page>
+                            <page string="Vehiculos">
+                                
+                            </page>
+                            <page string="Mascotas">
+
                             </page>
                         </notebook>
 

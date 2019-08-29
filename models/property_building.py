@@ -152,25 +152,3 @@ class PropertyFeatures(models.Model):
 
     number = fields.Integer()
 
-class PropertyCommonZones (models.Model):
-    _name = 'property.building.vehicle'
-    _rec_name = 'placa'
-
-    foto = fields.Binary('Foto')
-    tipo = fields.Selection([('moto','Moto'),('carro','Carro')],string="Tipo")
-    marca = fields.Char(string="Marca")
-    modelo = fields.Char(string="Modelo")
-    placa = fields.Char(string="Placa")
-    color = fields.Char(string="Color")
-    parqueadero = fields.Char(string="Parqueadero")
-
-
-class PropertyPet (models.Model):
-    _name = 'property.building.pet'
-
-    foto_placa = fields.Binary('Foto Placa')
-    foto = fields.Binary('Foto Animal')
-    tipo = fields.Char(string="Tipo")
-    raza = fields.Char(string="Raza")
-    nombre = fields.Char(string="Nombre")
-    color = fields.Char(string="Color")
