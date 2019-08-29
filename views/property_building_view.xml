@@ -84,19 +84,6 @@
                                     <field name="property_services" />
                                     <field name="society_services" />
                                 </group>
-                                <group string="Mascotas">
-                                    <field name="mascotas_ids">
-                                        <tree string="Mascotas" create="true" editable="bottom">
-                                            <field name="responsable_obj"/>
-                                            <field name="foto_placa"/>
-                                            <field name="foto"/>
-                                            <field name="tipo"/>
-                                            <field name="raza"/>
-                                            <field name="nombre"/>
-                                            <field name="color"/>
-                                        </tree>
-                                    </field>
-                                </group>
                                 <field name="note" class="oe_inline" placeholder="Note"/>
                                 <div class="oe_clear"/>
                             </page>

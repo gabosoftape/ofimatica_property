@@ -13,8 +13,6 @@ class PropertyBuilding(models.Model):
     _inherit = 'property.property'
 
     land_id = fields.Many2one('property.land', string='Conjunto')
-    mascotas_ids = fields.One2many('property.building.pet','responsable_obj', string="Mascotas")
-    vehiculos_ids = fields.One2many('property.building.vehicle','responsable_obj', string="Vehiculos")
     foto = fields.Binary()
     type_prop = fields.Selection([('apto', 'Apartamento'), ('casa', 'Casa'),
                                   ('park','Parqueadero'),('study','Apartaestudio')], string="Tipo de Propiedad")
@@ -158,7 +156,6 @@ class PropertyCommonZones (models.Model):
     _name = 'property.building.vehicle'
     _rec_name = 'placa'
 
-    inmueble_obj = fields.Many2one('property.building',string="Inmueble")
     foto = fields.Binary('Foto')
     tipo = fields.Selection([('moto','Moto'),('carro','Carro')],string="Tipo")
     marca = fields.Char(string="Marca")
@@ -171,7 +168,7 @@ class PropertyCommonZones (models.Model):
 class PropertyPet (models.Model):
     _name = 'property.building.pet'
     _rec_name = 'nombre'
-    inmueble_obj = fields.Many2one('property.building', string="Inmueble")
+
     foto_placa = fields.Binary('Foto Placa')
     foto = fields.Binary('Foto Animal')
     tipo = fields.Char(string="Tipo")
