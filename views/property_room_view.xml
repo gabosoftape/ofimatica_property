@@ -2,7 +2,7 @@
 <odoo>
     <data>
         <record id="view_property_room_tree" model="ir.ui.view">
-            <field name="name">Lugares</field>
+            <field name="name">Zonas Comunes</field>
             <field name="model">property.room</field>
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
@@ -16,7 +16,7 @@
         </record>
 
         <record id="view_property_room_form" model="ir.ui.view">
-            <field name="name">Nuevo Lugar</field>
+            <field name="name">Zonas Comunes</field>
             <field name="model">property.room</field>
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
@@ -63,7 +63,7 @@
         </record>
 
         <record id="view_property_room_filter" model="ir.ui.view">
-            <field name="name">lugares</field>
+            <field name="name">Zonas Comunes</field>
             <field name="model">property.room</field>
             <field name="type">search</field>
             <field name="arch" type="xml">
@@ -83,13 +83,13 @@
 
 
         <record id="action_property_room" model="ir.actions.act_window">
-            <field name="name">Lugares</field>
+            <field name="name">Zonas Comunes</field>
             <field name="res_model">property.room</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,pivot</field>
         </record>
 
-        <!--<menuitem name="Lugares" id="menu_property_room"
-                  action="action_property_room" parent="base.menu_property_info"/> -->
+        <menuitem name="Zonas Comunes" id="menu_property_room"
+                  action="action_property_room" parent="base.menu_property_info"/>
     </data>
 </odoo>
