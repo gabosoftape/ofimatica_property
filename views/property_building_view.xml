@@ -58,7 +58,7 @@
 
                             <group string="Ubicacion Interna">
                                 <div class="o_address_format">
-                                    <field name="street" placeholder="Manzana 3 Casa 23" class="o_address_street"/>
+                                    <field name="street" placeholder="Street..." class="o_address_street"/>
                                 </div>
                             </group>
 
