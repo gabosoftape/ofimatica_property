@@ -162,7 +162,7 @@ class PropertyCommonZones (models.Model):
     modelo = fields.Char(string="Modelo")
     placa = fields.Char(string="Placa")
     color = fields.Char(string="Color")
-    parqueadero = fields.Chars(string="Parqueadero")
+    parqueadero = fields.Char(string="Parqueadero")
 
 
 class PropertyPet (models.Model):
