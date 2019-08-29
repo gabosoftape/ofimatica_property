@@ -158,7 +158,7 @@ class PropertyCommonZones (models.Model):
     _name = 'property.building.vehicle'
     _rec_name = 'placa'
 
-    responsable_obj = fields.Many2one('res.partner')
+    inmueble_obj = fields.Many2one('property.building',string="Inmueble")
     foto = fields.Binary('Foto')
     tipo = fields.Selection([('moto','Moto'),('carro','Carro')],string="Tipo")
     marca = fields.Char(string="Marca")
@@ -171,7 +171,7 @@ class PropertyCommonZones (models.Model):
 class PropertyPet (models.Model):
     _name = 'property.building.pet'
     _rec_name = 'nombre'
-    responsable_obj = fields.Many2one('res.partner')
+    inmueble_obj = fields.Many2one('property.building', string="Inmueble")
     foto_placa = fields.Binary('Foto Placa')
     foto = fields.Binary('Foto Animal')
     tipo = fields.Char(string="Tipo")
