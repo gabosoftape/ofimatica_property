@@ -10,6 +10,8 @@ from datetime import datetime
 class PropertyBuilding(models.Model):
     _name = 'property.building'
     _description = "Building"
+    _inherit = 'property.property'
+
     active = fields.Boolean(default=True)
     land_id = fields.Many2one('property.land', string='Conjunto')
     foto = fields.Binary('Foto')
@@ -39,6 +41,7 @@ class PropertyBuilding(models.Model):
     property_services = fields.Text('Servicios Publicos')
     society_services = fields.Text('Servicios Internoss')
     street = fields.Char(required=True)
+    note = fields.Text('Descripcion')
 
     @api.onchange('purpose_parent_id')
     def onchange_purpose_parent_id(self):

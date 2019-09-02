@@ -7,7 +7,7 @@
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name"/>
+                    <field name="nombre"/>
                     <field name="building_id"/>
                     <field name="foto"/>
                     <field name="valor_hora"/>
