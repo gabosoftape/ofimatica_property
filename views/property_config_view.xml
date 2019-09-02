@@ -16,7 +16,7 @@
          <!-- tree property_building_type -->
         <record id="view_property_building_type_tree" model="ir.ui.view">
             <field name="name">Tipos de inmueble</field>
-            <field name="model">property.land.type</field>
+            <field name="model">property.building.type</field>
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <tree>
@@ -69,9 +69,9 @@
         </record>
 
 
-        <menuitem name="Tipos de Cliente" id="menu_property_land_type"
+        <menuitem name="Tipos de Copropiedad" id="menu_property_land_type"
                   action="action_property_land_type" parent="base.menu_property_config"  sequence="101"/>
-        <menuitem name="Tipos de Inmueble" id="menu_property_land_type"
+        <menuitem name="Tipos de Inmueble" id="menu_property_building_type"
                   action="action_property_building_type" parent="base.menu_property_config"  sequence="102"/>
     </data>
 </odoo>

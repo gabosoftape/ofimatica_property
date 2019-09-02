@@ -155,3 +155,10 @@ class PropertyFeatures(models.Model):
 
     number = fields.Integer()
 
+class propertyBuildingTypes(models.Model):
+    _name = 'property.building.type'
+    _rec_name = 'nombre'
+
+    codigo = fields.Char('Codigo Postal')
+    nombre = fields.Char('Nombre')
+    descripcion = fields.Char('Descripcion')
