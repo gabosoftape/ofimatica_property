@@ -9,8 +9,10 @@
                 <tree>
                     <field name="name"/>
                     <field name="building_id"/>
-                    <field name="usage"/>
-                    <field name="surface" sum="surface"/>
+                    <field name="foto"/>
+                    <field name="valor_hora"/>
+                    <field name="descripcion_uso"/>
+                    <field name="max_person"/>
                 </tree>
             </field>
         </record>
@@ -27,7 +29,7 @@
                     <sheet>
                         <div class="oe_title oe_left">
                             <h1>
-                                <field name="name" placeholder="Room Number"/>
+                                <field name="name" placeholder="Nombre de Zona comun"/>
                             </h1>
                         </div>
                         <group>

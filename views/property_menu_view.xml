@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <odoo>
     <data>
-        <menuitem name="Gestion Inmobiliaria" id="base.menu_property_app" sequence="25"/>
+        <menuitem name="Gestion Inmobiliaria" id="base.menu_property_app" sequence="25" web_icon="ofimatica_property,static/description/icon.png"/>
         <menuitem name="Mi Tablero" id="property_tablero" action="board.open_board_my_dash_action" parent="base.menu_property_app" sequence="10"/>
         <menuitem name="Gestion de Clientes" id="base.menu_property_reports"  parent="base.menu_property_app" sequence="20"/>
         <menuitem name="Gestion de inmuebles" id="base.menu_property_info" parent="base.menu_property_app" sequence="50"/>
