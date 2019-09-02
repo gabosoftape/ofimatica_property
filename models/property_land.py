@@ -23,6 +23,7 @@ class PropertyLand(models.Model):
     cod = fields.Char()
 # aqui van los atributos de la primera entrega.
     empresa_admin = fields.Char('Empresa Administradora')
+    empresa_admin_nit = fields.Char('Nit')
     representante_legal = fields.Many2one('res.partner',string="Representante legal")
     administrador_delegado = fields.Many2one('res.users',string="Administrador Delegado")
     area_total = fields.Float(string="Area Total")

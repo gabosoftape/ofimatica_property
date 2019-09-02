@@ -11,10 +11,10 @@ from odoo.modules import get_module_resource
 class Partner(models.Model):
     _inherit = "res.partner"
 
-    type = fields.Selection(selection_add=[('land','Land'),
-                                           ('building','Building')])
+    type = fields.Selection(selection_add=[('administrador_super','SA'),
+                                           ('administrador','Administrador'),('propietario','Propietario'),('arrendatario','Arrendatario')])
 
-
+    
 
 
 

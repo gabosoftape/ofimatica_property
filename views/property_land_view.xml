@@ -81,6 +81,7 @@
                                         <group>
                                             <group string="Detalle Empresa admin">
                                                 <field name="empresa_admin"/>
+                                                <field name="empresa_admin_nit"/>
                                                 <field name="representante_legal"/>
                                             </group>
                                             <group string="Detalle Administrador">
@@ -133,8 +134,8 @@
             <field name="view_mode">tree,form,pivot</field>
         </record>
 
-       <!-- <menuitem name="Clientes" id="menu_property_land"
-                  action="action_property_land" parent="base.menu_property_info"/> -->
+       <menuitem name="Clientes" id="menu_property_land"
+                  action="action_property_land" parent="base.menu_property_reports"/> -->
 
 
     </data>
