@@ -17,6 +17,7 @@ class PropertyLand(models.Model):
     tarla = fields.Char('Telefono')  # required=True)
     sector = fields.Char(string="Sector catastral")
     bloc_fizic = fields.Char(string="Cedula catastral")
+    name = fields.Char(string="Nombre de Cliente")
 
     carte = fields.Char(string="Carte funciară")
     utr = fields.Char(string="UTR")
