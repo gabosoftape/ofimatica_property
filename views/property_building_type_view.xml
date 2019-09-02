@@ -2,7 +2,7 @@
              <!-- tree property_building_type -->
         <record id="view_property_building_type_tree" model="ir.ui.view">
             <field name="name">Tipos de inmueble</field>
-            <field name="model">property.building.type</field>
+            <field name="model">building.type</field>
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <tree>
@@ -13,7 +13,7 @@
         </record>
          <record id="view_property_building_type_form" model="ir.ui.view">
             <field name="name">Tipo de Inmueble</field>
-            <field name="model">property.building.type</field>
+            <field name="model">building.type</field>
             <field name="arch" type="xml">
                 <form>
                     <group>
@@ -26,7 +26,7 @@
         </record>
         <record id="action_property_building_type" model="ir.actions.act_window">
             <field name="name">Tipos de inmueble</field>
-            <field name="res_model">property.building.type</field>
+            <field name="res_model">building.type</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
         </record>
