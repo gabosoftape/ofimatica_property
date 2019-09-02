@@ -10,5 +10,6 @@ access_property_localidad,access_localidad,model_property_localidad,,1,1,1,1
 access_property_building_purpose,access_property_building_purpose,model_property_building_purpose,,1,1,1,1
 access_property_cost_center,access_property_cost_center,model_property_cost_center,,1,1,1,1
 access_property_region,access_property_region,model_property_region,,1,1,1,1
-
+access_property_vehicle,access_property_vehicle,model_property_vehicle,,1,1,1,1
+access_property_pet,access_property_pet,model_property_pet,,1,1,1,1
 access_property_features,access_property_features,model_property_features,,1,1,1,1
