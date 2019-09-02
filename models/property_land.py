@@ -42,7 +42,14 @@ class tipoDePropiedad(models.Model):
 class localidadbehive(models.Model):
     _name = 'property.localidad'
     _rec_name = 'nombre'
+    codigo = fields.Char('Codigo Postal')
+    nombre = fields.Char('Nombre')
+    descripcion = fields.Char('Descripcion')
 
+
+class propertyBuildingTypes(models.Model):
+    _name = 'building.type'
+    _rec_name = 'nombre'
     codigo = fields.Char('Codigo Postal')
     nombre = fields.Char('Nombre')
     descripcion = fields.Char('Descripcion')
