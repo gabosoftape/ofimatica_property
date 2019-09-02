@@ -51,7 +51,6 @@
                         <group>
                             <group string="Datos de Identificacion">
                                 <field name="region_id"/>
-                                <field name="owner_id"/>
                             </group>
 
                             <group string="Direccion">
@@ -63,6 +62,7 @@
                                            options='{"no_open": True}'
                                            context="{'country_id': country_id, 'zip': zip}"/>
                                     <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                    <field name="localidad" class="o_address_zip"/>
                                     <field name="country_id" placeholder="Country" class="o_address_country"
                                            options='{"no_open": True, "no_create": True}'/>
                                 </div>

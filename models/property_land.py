@@ -28,6 +28,7 @@ class PropertyLand(models.Model):
     administrador_delegado = fields.Many2one('res.users',string="Administrador Delegado")
     area_total = fields.Float(string="Area Total")
     area_comun = fields.Float(string="Area Comun" )
+    localidad = fields.Many2one('property.localidad',string="Localidad")
 
 class tipoDePropiedad(models.Model):
     _name = 'property.land.type'
@@ -37,4 +38,10 @@ class tipoDePropiedad(models.Model):
     nombre = fields.Char('Nombre', required=True)
     descripcion = fields.Char('Descripcion')
 
+class localidadbehive(models.Model):
+    _name = 'property.localidad'
+    _rec_name = 'nombre'
 
+    codigo = fields.Char('Codigo Postal')
+    nombre = fields.Char('Nombre')
+    descripcion = fields.Char('Descripcion')
