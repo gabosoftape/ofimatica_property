@@ -19,6 +19,7 @@
         'views/property_config_view.xml',
         'views/property_land_view.xml',
         'views/property_building_view.xml',
+        'views/property_building_type_view.xml',
         'views/property_room_view.xml',
         'data/data.xml',
         'data/res.country.state.csv',

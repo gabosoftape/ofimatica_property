@@ -155,6 +155,7 @@ class PropertyFeatures(models.Model):
 
     number = fields.Integer()
 
+
 class propertyBuildingTypes(models.Model):
     _name = 'property.building.type'
     _rec_name = 'nombre'
