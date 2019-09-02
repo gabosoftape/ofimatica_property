@@ -38,6 +38,7 @@ class PropertyBuilding(models.Model):
     aditional_room = fields.Text('Habitaciones adicionales')
     property_services = fields.Text('Servicios Publicos')
     society_services = fields.Text('Servicios Internoss')
+    street = fields.Char(required=True)
 
     @api.onchange('purpose_parent_id')
     def onchange_purpose_parent_id(self):
