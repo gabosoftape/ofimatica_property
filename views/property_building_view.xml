@@ -10,8 +10,6 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="region_id"/>
-                    <field name="owner_id"/>
                     <field name="asset_number"/>
                     <field name="city"/>
                     <field name="categ_id"/>
@@ -142,9 +140,7 @@
             <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Search">
-
-
-                    <field name="owner_id"/>
+                    <field name="administrator_id"/>
                     <field name="city"/>
 
                     <separator/>
