@@ -40,7 +40,6 @@
                         </div>
                         <group>
                             <group string="Identification">
-                                <field name="admon_value"/>
                                 <field name="type_prop"/>
                                 <field name="administrator_id"/>
                             </group>
