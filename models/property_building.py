@@ -10,7 +10,7 @@ from datetime import datetime
 class PropertyBuilding(models.Model):
     _name = 'property.building'
     _description = "Building"
-
+    active = fields.Boolean(default=True)
     land_id = fields.Many2one('property.land', string='Conjunto')
     foto = fields.Binary('Foto')
     nombre = fields.Char('Nombre del inmueble')
