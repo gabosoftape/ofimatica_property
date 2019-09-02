@@ -14,8 +14,7 @@ class PropertyBuilding(models.Model):
 
     land_id = fields.Many2one('property.land', string='Conjunto')
     foto = fields.Binary()
-    type_prop = fields.Selection([('apto', 'Apartamento'), ('casa', 'Casa'),
-                                  ('park','Parqueadero'),('study','Apartaestudio')], string="Tipo de Propiedad")
+    type_prop = fields.Many2one('building.type', string='Tipo de Inmueble')
     categ_id = fields.Many2one('property.building.categ', string="Categoria")
     room_ids = fields.One2many('property.room', 'building_id', string="Lugares")
     vehiculos_ids = fields.One2many('property.vehicle', 'building_id', string="Vehiculos")
