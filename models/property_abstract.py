@@ -18,19 +18,17 @@ class PropertyProperty(models.AbstractModel):
         return self.env['res.company']._company_default_get(self._name)
 
 
-    name = fields.Char(string="Nombre")
-    foto = fields.Binary()
-    street = fields.Char()
+    name = fields.Char(string="Nombre",)
+    foto = fields.Binary(required=True)
+    street = fields.Char(required=True)
     street2 = fields.Char()
     zip = fields.Char(change_default=True)
-    city = fields.Char()
-    state_id = fields.Many2one("res.country.state", string='Estado', ondelete='restrict')
+    city = fields.Char(required=True)
+    state_id = fields.Many2one("res.country.state", string='Estado', ondelete='restrict',required=True)
     country_id = fields.Many2one('res.country', string='País', ondelete='restrict')
     company_id = fields.Many2one('res.company', 'Compañia', index=True, default=_default_company)
     active = fields.Boolean(default=True)
-
-    owner_id = fields.Many2one('res.users', string="Administrador", domain=[('active', '=', True)])
-    region_id = fields.Char(string="NIT")
+    nit = fields.Char(string="NIT")
     asset_number = fields.Char(string="NIIF", index=True)
 
 

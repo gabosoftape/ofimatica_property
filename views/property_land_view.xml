@@ -50,7 +50,7 @@
                         </div>
                         <group>
                             <group string="Datos de Identificacion">
-                                <field name="region_id"/>
+                                <field name="nit"/>
                             </group>
 
                             <group string="Direccion">
