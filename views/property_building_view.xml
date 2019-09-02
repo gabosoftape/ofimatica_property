@@ -71,7 +71,6 @@
                                     <field name="rented_room"/>
                                     <field name="tenant_id" attrs="{'invisible': [('rented_room', '=', False)]}"/>
                                     <field name="rent_domain" />
-                                    <field name="admon_value" invisible="1" />
                                 </group>
                                 <group string="Detalles del inmueble">
                                     <field name="dormitorios" />
