@@ -11,26 +11,10 @@ selection_level = [('p', 'P'), ('m', 'M'), ('s', 'S')] + [(num, str(num)) for nu
 
 class PropertyRoom(models.Model):
     _name = 'property.room'
-    _description = "Room"
+    _description = "Zonas Comunes"
 
-    name = fields.Char(string="Number")
+    nombre = fields.Char(string="Nombre")
     building_id = fields.Many2one('property.building', string='Inmueble', required=True)
-
-    level = fields.Selection(selection_level)
-
-    height = fields.Float()
-    perimeter = fields.Float()
-    surface_disinsection = fields.Float(string="Area of disinsection", compute="_compute_surface_disinsection", store=True)
-
-    surface = fields.Float("Surface area")
-    surface_cleaning_floor = fields.Float(string="Surface cleaning floor")
-    surface_cleaning_doors = fields.Float(string="Surface cleaning doors")
-    surface_cleaning_windows = fields.Float(string="Surface cleaning window")
-
-
-
-    floor_type = fields.Selection([('c', 'Carpet'), ('l', 'Linoleum'), ('w', 'Wood')])
-
     usage = fields.Selection([
         ('office', 'Office'),
         ('meeting', 'Meeting room'),
@@ -48,25 +32,17 @@ class PropertyRoom(models.Model):
         ('lobby', 'Lobby'),
         ('staircase', 'Staircase'),
     ], string="Room usage", help="The purpose of using the room")
-
     last_maintenance = fields.Date()
     technical_condition = fields.Selection([(0,'Missing'),(1,'Unsatisfactory'),(3,'good'),(5,'very good')],
                                            group_operator='avg')
+    foto = fields.Binary()
+    valor_hora = fields.Float('Valor Hora')
+    descripcion_uso = fields.Text('Descripcion de Uso')
+    is_reserved = fields.Boolean('Esta reservado?')
+    max_person = fields.Float('Numero permitido de personas Uso')
+    is_autoreserved = fields.Boolean('esta autoreservado?')
 
 
-
-
-
-    @api.multi
-    @api.depends('surface', 'height', 'perimeter')
-    def _compute_surface_disinsection(self):
-        for room in self:
-            room.surface_disinsection = 2 * room.surface + room.height * room.perimeter
-
-    @api.constrains
-    def _check_cleaning_surface(self):
-        if self.cleaning_surface > self.surface:
-            raise ValidationError(_('Cleaning surface most by lower that surface area'))
 
 
 
