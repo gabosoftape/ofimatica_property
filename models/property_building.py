@@ -12,7 +12,7 @@ class PropertyBuilding(models.Model):
     _description = "Building"
 
     land_id = fields.Many2one('property.land', string='Conjunto')
-    foto = fields.Binary()
+    foto = fields.Binary('Foto')
     nombre = fields.Char('Nombre del inmueble')
     type_prop = fields.Many2one('building.type', string='Tipo de Inmueble')
     categ_id = fields.Many2one('property.building.categ', string="Categoria")
