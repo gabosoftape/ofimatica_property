@@ -28,37 +28,25 @@
                     </header>
                     <sheet>
                         <div class="oe_title oe_left">
+                            <field name="foto" widget="image" height="300" width="300"/>
                             <h1>
-                                <field name="name" placeholder="Nombre de Zona comun"/>
+                                <field name="nombre" placeholder="Nombre de Zona comun"/>
                             </h1>
                         </div>
                         <group>
                             <group string="Identification">
-                                <field name="building_id"/>
-                                <field name="level"/>
+                                <field name="valor_hora"/>
+                                <field name="usage"/>
+                                <field name="descripcion_uso"/>
+                                <field name="max_person"/>
                             </group>
-                            <group string="Dimension">
+                            <group string="Horario">
                                 <div class="o_row">
-                                    <field name="surface"/><span>m²</span>
+                                   Aqui va el horario, cuando se valide el workflow.
                                 </div>
-                               <div class="o_row">
-                                    <field name="height"/><span>m</span>
-                                </div>
-                                <div class="o_row">
-                                    <field name="perimeter"/><span>m</span>
-                                </div>
+
                             </group>
                         </group>
-                        <notebook>
-                            <page string="General">
-                                <group>
-                                <group>
-                                    <field name="floor_type"/>
-                                    <field name="usage"/>
-                                </group>
-                                </group>
-                            </page>
-                        </notebook>
                     </sheet>
                 </form>
             </field>

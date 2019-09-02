@@ -153,4 +153,5 @@ class PropertyFeatures(models.Model):
     ], string='Features')
 
     number = fields.Integer()
+    name = fields.Char(string="Nombre de Inmueble")
 
