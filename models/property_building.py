@@ -19,11 +19,13 @@ class PropertyBuilding(models.Model):
     type_prop = fields.Many2one('building.type', string='Tipo de Inmueble')
     categ_id = fields.Many2one('property.building.categ', string="Categoria")
     room_ids = fields.One2many('property.room', 'building_id', string="Lugares")
+    familia_ids = fields.One2many('res.partner', 'parent_id', string='Familia', domain=[
+        ('active', '=', True)])  # force "active_test" domain to bypass _search() override
     vehiculos_ids = fields.One2many('property.vehicle', 'building_id', string="Vehiculos")
     mascotas_ids = fields.One2many('property.pet', 'building_id', string="Mascotas")
     features_ids = fields.One2many('property.features', 'building_id', string="Features")
 
-    administrator_id = fields.Many2one('res.partner', string="Propietario", domain=[('is_company', '=', False)])
+    administrator_id = fields.Many2one('res.users', string="Propietario")
 
     purpose_prop = fields.Selection([('sale', 'Venta'), ('rent', 'Arriendo'),
                                   ], string="Estado de la propiedad")
