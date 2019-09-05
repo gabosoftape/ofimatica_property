@@ -32,7 +32,7 @@ class PropertyBuilding(models.Model):
 
     deposit = fields.Float('Deposito')
     rent_domain = fields.Selection([('family', 'Familia'), ('one_person', 'Persona Sola'),('due','Pareja')], string="Estado de la propiedad")
-    rented_room = fields.Boolean()
+    rented_room = fields.Boolean('Esta arrendado?')
     tenant_id = fields.Many2one('res.partner', string="Arrendatario")
     admon_value = fields.Float(string='Valor Administracion')
     dormitorios = fields.Float('Dormitorios')
