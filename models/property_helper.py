@@ -8,7 +8,7 @@ class PropertyHelper(models.Model):
     funcion = fields.Char('Función')
     nombre = fields.Char(string="Nombres")
     apellido = fields.Char(string="Apellidos")
-    doc_type = fields.Selection([('ti','Tarjeta de Identidad'),('cc','Cedula de Ciudadanía'),('ce','Cedula de Extranjeria')])
+    doc_type = fields.Selection([('ti','Tarjeta de Identidad'),('cc','Cedula de Ciudadanía'),('ce','Cedula de Extranjeria')], string="Tipo de Documento")
     doc_id = fields.Char('Numero de Documento')
     telefono = fields.Char('Telefono fijo')
     celular = fields.Char('Celular')
