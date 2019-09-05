@@ -64,9 +64,29 @@
                                 <field name="note" class="oe_inline" placeholder="Note"/>
                                 <div class="oe_clear"/>
                             </page>
-                            <page string="Familia" autofocus="autofocus">
+                            <page string="Familia">
                                 <field name="familia_ids" mode="kanban">
-
+                                    <tree editable="bootom">
+                                        <field name="parentezco"/>
+                                        <field name="nombre"/>
+                                        <field name="apellidos"/>
+                                        <field name="fecha_nacimiento"/>
+                                        <field name="emergency_name"/>
+                                        <field name="emergency_tel"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Colaboradores" autofocus="autofocus">
+                                <field name="helper_ids" mode="kanban">
+                                    <tree editable="bootom">
+                                        <field name="funcion"/>
+                                        <field name="nombre"/>
+                                        <field name="apellido"/>
+                                        <field name="doc_type"/>
+                                        <field name="doc_id"/>
+                                        <field name="telefono"/>
+                                        <field name="celular"/>
+                                    </tree>
                                 </field>
                             </page>
 

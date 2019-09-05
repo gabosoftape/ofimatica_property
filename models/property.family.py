@@ -5,8 +5,9 @@ class PropertyFamily(models.Model):
     _name = 'property.family'
 
     building_id = fields.Many2one('property.building', string='Inmueble', required=True)
-    nombre = fields.Char(string="Nombre")
-    raza = fields.Char(string="Raza")
-    color = fields.Char(string="Color")
-    seña = fields.Char(string="Seña Particular")
-    placa = fields.Char(string="No. Placa")
+    parentezco = fields.Char('Parentezco')
+    nombre = fields.Char('Nombres')
+    apellidos = fields.Char('Apellidos')
+    fecha_nacimiento = fields.Date('Fecha de Nacimiento')
+    emergency_name = fields.Char('En caso de emergencia llamar a')
+    emergency_tel = fields.Char('Telefono')
