@@ -11,6 +11,8 @@ from . import property_room
 from . import res_partner
 from . import property_vehicles
 from . import property_pets
+from . import property_family
+from . import property_helper
 
 
 
