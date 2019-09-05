@@ -8,12 +8,13 @@ class PropertyVehicle(models.Model):
     #foto = fields.Binary('Foto')
     propietario = fields.Char('Propietario')
     doc_propietario = fields.Char('Documento Propietario')
-    tipo = fields.Selection([('moto','Moto'),('carro','Carro')],string="Tipo")
+    tipo = fields.Selection([('bici','Bicicleta'),('moto','Moto'),('carro','Carro')],string="Tipo")
     marca = fields.Char(string="Marca")
     modelo = fields.Char(string="Modelo")
     placa = fields.Char(string="Placa")
     color = fields.Char(string="Color")
     parqueadero = fields.Char(string="Parqueadero")
+
 
 
 
