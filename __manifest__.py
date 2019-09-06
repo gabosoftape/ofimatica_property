@@ -15,6 +15,7 @@
     ],
     "license": "LGPL-3",
     "data": [
+        'security/ofimatica_property_security.xml',
         'views/property_menu_view.xml',
         'views/property_config_view.xml',
         'views/property_land_view.xml',
@@ -23,7 +24,8 @@
         'views/property_room_view.xml',
         'data/data.xml',
         'data/res.country.state.csv',
-        'security/ir.model.access.csv'
+        'security/ir.model.access.csv',
+
 
     ],
     'application': True,

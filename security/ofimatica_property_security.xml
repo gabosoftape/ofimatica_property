@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE xml>
+<odoo noupdate="1">
+
+    <!--Group for property super manager -->
+    <record id="group_property_super_manager" model="res.groups">
+        <field name="name">Super Administrador</field>
+    </record>
+    <!--Group for property manager -->
+    <record id="group_property_manager" model="res.groups">
+        <field name="name">Administrador</field>
+    </record>
+    <!--Group for Property owner -->
+    <record id="group_property_owner" model="res.groups">
+        <field name="name">Propietario</field>
+    </record>
+
+    <!--Group for property lessee-->
+    <record id="group_property_lessee" model="res.groups">
+        <field name="name">Arrendatario</field>
+    </record>
+
+
+</odoo>
