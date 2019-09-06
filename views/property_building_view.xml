@@ -43,24 +43,24 @@
 
                         </group>
                         <notebook>
-                            <page string="Detalles de Inmueble" attrs="{'readonly': [('can_edit_detail', '=', False)]}">
+                            <page string="Detalles de Inmueble">
                                 <group string="Acerca de la propiedad">
-                                    <field name="type_prop" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
-                                    <field name="purpose_prop"/>
-                                    <field name="administrator_id"/>
-                                    <field name="land_id"/>
-                                    <field name="rented_room"/>
+                                    <field name="type_prop" attrs="{'readonly': [('can_edit_detail', '=', False)]}" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+                                    <field name="purpose_prop" attrs="{'readonly': [('can_edit_detail', '=', False)]}"/>
+                                    <field name="administrator_id" attrs="{'readonly': [('can_edit_detail', '=', False)]}"/>
+                                    <field name="land_id" readonly="1"/>
+                                    <field name="rented_room" attrs="{'readonly': [('can_edit_detail', '=', False)]}"/>
                                     <field name="tenant_id" attrs="{'invisible': [('rented_room', '=', False)]}"/>
-                                    <field name="rent_domain" />
+                                    <field name="rent_domain" attrs="{'readonly': [('can_edit_detail', '=', False)]}" />
                                 </group>
                                 <group string="Detalles del inmueble">
-                                    <field name="dormitorios" />
-                                    <field name="baños" />
-                                    <field name="balcones" />
-                                    <field name="mobiliario" />
-                                    <field name="aditional_room" />
-                                    <field name="property_services" />
-                                    <field name="society_services" />
+                                    <field name="dormitorios" attrs="{'readonly': [('can_edit_detail', '=', False)]}"/>
+                                    <field name="baños" attrs="{'readonly': [('can_edit_detail', '=', False)]}"/>
+                                    <field name="balcones" attrs="{'readonly': [('can_edit_detail', '=', False)]}"/>
+                                    <field name="mobiliario" attrs="{'readonly': [('can_edit_detail', '=', False)]}"/>
+                                    <field name="aditional_room" attrs="{'readonly': [('can_edit_detail', '=', False)]}"/>
+                                    <field name="property_services" attrs="{'readonly': [('can_edit_detail', '=', False)]}" />
+                                    <field name="society_services" attrs="{'readonly': [('can_edit_detail', '=', False)]}"/>
                                 </group>
                                 <field name="note" class="oe_inline" placeholder="Note"/>
                                 <div class="oe_clear"/>
