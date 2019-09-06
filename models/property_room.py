@@ -41,6 +41,7 @@ class PropertyRoom(models.Model):
     is_reserved = fields.Boolean('Esta reservado?')
     max_person = fields.Float('Numero permitido de personas Uso')
     is_autoreserved = fields.Boolean('esta autoreservado?')
+    horario_ids = fields.One2many('property.rules', 'building_id', string="Familia")
 
 
 
