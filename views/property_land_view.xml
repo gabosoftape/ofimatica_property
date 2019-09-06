@@ -81,8 +81,8 @@
                                                 <field name="empresa_admin_doc_type" widget="selection"/>
                                                 <field name="empresa_admin"  attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'nit')]}"/>
                                                 <field name="empresa_admin_nit" attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'nit')]}" />
-                                                <field name="representante_legal" attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'nit')]}"/>
-                                                <field name="administrador_delegado" attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'cc')]}"/>
+                                                <field name="representante_legal" attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'nit')], 'required':[('empresa_admin_doc_type','=','nit')]}"/>
+                                                <field name="administrador_delegado" attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'cc')], 'required':[('empresa_admin_doc_type','=','cc')]}"/>
                                             </group>
                                     </group>
                                 <field name="note" class="oe_inline" placeholder="Note"/>
