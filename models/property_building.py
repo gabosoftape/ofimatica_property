@@ -9,7 +9,7 @@ from datetime import datetime
 
 class PropertyBuilding(models.Model):
     _name = 'property.building'
-    _description = "Building"
+    _description = "Inmuebles"
     _inherit = 'property.property'
 
     active = fields.Boolean(default=True)
