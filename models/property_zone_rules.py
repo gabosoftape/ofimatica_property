@@ -3,6 +3,7 @@ from odoo import api, fields, models, _
 
 class ZoneRules(models.Model):
     _name = 'property.rules'
+
     building_id = fields.Many2one('property.room', string='Zona', required=True)
     dia = fields.Selection([('lunes','Lunes'),
         ('martes','Martes'),
