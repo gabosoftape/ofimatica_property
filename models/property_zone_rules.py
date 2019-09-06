@@ -10,7 +10,8 @@ class ZoneRules(models.Model):
         ('jueves','Jueves'),
         ('viernes','Viernes'),
         ('sabado','Sábado'),
-        ('domingo','Domingo')
+        ('domingo','Domingo'),
+        ('festivo','Festivos')
     ],
         string="Dia", required=True)
     desde = fields.Float(string="Desde")

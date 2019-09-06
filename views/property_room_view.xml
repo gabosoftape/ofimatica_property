@@ -36,13 +36,11 @@
                         <group>
                             <group string="Identification">
                                 <field name="valor_hora"/>
-                                <field name="usage"/>
                                 <field name="descripcion_uso"/>
                                 <field name="max_person"/>
                             </group>
                             <group string="Horario">
                                 <div class="o_row">
-                                   Aqui va el horario, cuando se valide el workflow.
                                     <field name="horario_ids">
                                         <tree editable="bootom">
                                             <field name="dia"/>
