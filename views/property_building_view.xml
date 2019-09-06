@@ -30,6 +30,7 @@
                         </div>
                         <group string="Informacion de Inmueble">
                             <group string="Identification">
+                                <field name="can_edit_detail" invisible="1"/>
                                 <field name="type_prop"/>
                                 <field name="administrator_id"/>
                             </group>
@@ -42,7 +43,7 @@
 
                         </group>
                         <notebook>
-                            <page string="Detalles de Inmueble">
+                            <page string="Detalles de Inmueble" attrs="{'readonly': [('can_edit_detail', '=', False)]}">
                                 <group string="Acerca de la propiedad">
                                     <field name="type_prop" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
                                     <field name="purpose_prop"/>

@@ -44,6 +44,10 @@ class PropertyBuilding(models.Model):
     society_services = fields.Text('Servicios Internoss')
     street = fields.Char(required=True)
     note = fields.Text('Descripcion')
+    can_edit_detail = fields.Boolean(compute='_compute_can_edit_detail')
+
+    def _compute_can_edit_detail(self):
+        self.can_edit_detail = self.env.user.has_group('ofimatica_property.group_property_owner')
 
     @api.onchange('purpose_parent_id')
     def onchange_purpose_parent_id(self):
