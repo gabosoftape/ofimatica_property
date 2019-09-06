@@ -77,7 +77,6 @@
                                             <field name="area_comun"/>
                                             <field name="area_total"/>
                                         </group>
-                                        <group>
                                             <group string="Detalle Administracion">
                                                 <field name="empresa_admin_doc_type" widget="selection"/>
                                                 <field name="empresa_admin"  attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'nit')]}"/>
@@ -85,7 +84,6 @@
                                                 <field name="representante_legal" attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'nit')]}"/>
                                                 <field name="administrador_delegado" attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'cc')]}"/>
                                             </group>
-                                        </group>
                                     </group>
                                 <field name="note" class="oe_inline" placeholder="Note"/>
                                 <div class="oe_clear"/>
