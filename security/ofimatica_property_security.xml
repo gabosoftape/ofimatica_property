@@ -4,11 +4,15 @@
 
     <!--Group for property super manager -->
     <record id="group_property_super_manager" model="res.groups">
-        <field name="name">Super Administrador</field>
+        <field name="name">Root Administrador</field>
     </record>
     <!--Group for property manager -->
     <record id="group_property_manager" model="res.groups">
         <field name="name">Administrador</field>
+    </record>
+    <!--Group for property manager -->
+    <record id="group_property_admin" model="res.groups">
+        <field name="name">Cliente</field>
     </record>
     <!--Group for Property owner -->
     <record id="group_property_owner" model="res.groups">
