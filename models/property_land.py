@@ -22,7 +22,7 @@ class PropertyLand(models.Model):
     carte = fields.Char(string="Carte funciară")
     utr = fields.Char(string="UTR")
     cod = fields.Char()
-    empresa_admin_doc_type = fields.Selection([('nit','Empresa Administradora'),('cc','Persona Natural')], string="Tipo de Documento")
+    empresa_admin_doc_type = fields.Selection([('nit','Empresa Administradora'),('cc','Persona Natural')], string="Tipo de Administracion")
 # aqui van los atributos de la primera entrega.
     empresa_admin = fields.Char('Nombre de Empresa Administradora')
     empresa_admin_nit = fields.Char('Nit')
