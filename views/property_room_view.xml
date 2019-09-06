@@ -85,6 +85,6 @@
         </record>
 
         <menuitem name="Zonas Comunes" id="menu_property_room"
-                  action="action_property_room" parent="base.menu_property_info"/>
+                  action="action_property_room" parent="base.menu_property_info" groups="group_property_admin,group_property_super_manager"/>
     </data>
 </odoo>
