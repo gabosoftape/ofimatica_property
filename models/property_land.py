@@ -22,8 +22,9 @@ class PropertyLand(models.Model):
     carte = fields.Char(string="Carte funciară")
     utr = fields.Char(string="UTR")
     cod = fields.Char()
+    empresa_admin_doc_type = fields.Selection([('nit','Empresa Administradora'),('cc','Persona Natural')], string="Tipo de Documento")
 # aqui van los atributos de la primera entrega.
-    empresa_admin = fields.Char('Empresa Administradora')
+    empresa_admin = fields.Char('Nombre de Empresa Administradora')
     empresa_admin_nit = fields.Char('Nit')
     representante_legal = fields.Many2one('res.partner',string="Representante legal")
     administrador_delegado = fields.Many2one('res.users',string="Administrador Delegado")

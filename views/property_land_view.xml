@@ -78,13 +78,12 @@
                                             <field name="area_total"/>
                                         </group>
                                         <group>
-                                            <group string="Detalle Empresa admin">
-                                                <field name="empresa_admin"/>
-                                                <field name="empresa_admin_nit"/>
-                                                <field name="representante_legal"/>
-                                            </group>
-                                            <group string="Detalle Administrador">
-                                                <field name="administrador_delegado"/>
+                                            <group string="Detalle Administracion">
+                                                <field name="empresa_admin_doc_type" widget="selection"/>
+                                                <field name="empresa_admin"  attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'nit')]}"/>
+                                                <field name="empresa_admin_nit" attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'nit')]}" />
+                                                <field name="representante_legal" attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'nit')]}"/>
+                                                <field name="administrador_delegado" attrs="{'invisible': [('empresa_admin_doc_type', '!=', 'nit')]}"/>
                                             </group>
                                         </group>
                                     </group>
