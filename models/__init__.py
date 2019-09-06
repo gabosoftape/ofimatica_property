@@ -13,6 +13,7 @@ from . import property_vehicles
 from . import property_pets
 from . import property_family
 from . import property_helper
+from . import property_zone_rules
 
 
 

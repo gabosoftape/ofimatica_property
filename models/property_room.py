@@ -14,7 +14,7 @@ class PropertyRoom(models.Model):
     _description = "Zonas Comunes"
 
     nombre = fields.Char(string="Nombre")
-    building_id = fields.Many2one('property.building', string='Inmueble', required=True)
+    building_id = fields.Many2one('property.land', string='Cliente', required=True)
     usage = fields.Selection([
         ('office', 'Office'),
         ('meeting', 'Meeting room'),

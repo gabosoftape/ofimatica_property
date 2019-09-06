@@ -13,3 +13,6 @@ access_property_region,access_property_region,model_property_region,,1,1,1,1
 access_property_vehicle,access_property_vehicle,model_property_vehicle,,1,1,1,1
 access_property_pet,access_property_pet,model_property_pet,,1,1,1,1
 access_property_features,access_property_features,model_property_features,,1,1,1,1
+access_property_family,access_property_family,model_property_family,,1,1,1,1
+access_property_helper,access_property_helper,model_property_helper,,1,1,1,1
+
