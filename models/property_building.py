@@ -24,12 +24,9 @@ class PropertyBuilding(models.Model):
     vehiculos_ids = fields.One2many('property.vehicle', 'building_id', string="Vehiculos")
     mascotas_ids = fields.One2many('property.pet', 'building_id', string="Mascotas")
     features_ids = fields.One2many('property.features', 'building_id', string="Features")
-
     administrator_id = fields.Many2one('res.users', string="Propietario")
-
     purpose_prop = fields.Selection([('sale', 'Venta'), ('rent', 'Arriendo'),
                                   ], string="Estado de la propiedad")
-
     deposit = fields.Float('Deposito')
     rent_domain = fields.Selection([('family', 'Familia'), ('one_person', 'Persona Sola'),('due','Pareja')], string="Estado de la propiedad")
     rented_room = fields.Boolean('Esta arrendado?')

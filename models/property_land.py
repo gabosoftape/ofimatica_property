@@ -51,6 +51,6 @@ class localidadbehive(models.Model):
 class propertyBuildingTypes(models.Model):
     _name = 'building.type'
     _rec_name = 'nombre'
-    codigo = fields.Char('Codigo Postal')
+    codigo = fields.Char('Codigo')
     nombre = fields.Char('Nombre')
     descripcion = fields.Char('Descripcion')
