@@ -31,5 +31,5 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem name="Tipos de Inmueble" id="menu_property_building_type" action="action_property_building_type" parent="base.menu_property_config" groups="group_property_manager,group_property_super_manager" sequence="2"/>
+        <menuitem name="Tipos de Inmueble" id="menu_property_building_type" action="action_property_building_type" parent="base.menu_property_config" sequence="20"/>
 </odoo>
