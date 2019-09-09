@@ -1,4 +1,5 @@
 <odoo>
+    <!-- behive client -->
     <record id="view_client_beehive_users_simple_form" model="ir.ui.view">
             <field name="name">client_beehive.simplified.form</field>
             <field name="model">property.property_admin</field>
@@ -29,6 +30,7 @@
                             <div attrs="{'invisible': [('id', '>', 0)]}" groups="base.group_no_one">
                                 <field name="groups_id" readonly="0" widget="many2many_tags" options="{'color_field': 'color'}" style="display: inline;"/> You will be able to define additional access rights by editing the newly created user under the Settings / Users menu.
                             </div>
+                            <field name="documento" widget="phone"/>
                             <field name="phone" widget="phone"/>
                             <field name="mobile" widget="phone"/>
                         </group>
@@ -39,6 +41,51 @@
     <record id="action_beehive_client" model="ir.actions.act_window">
             <field name="name">Cientes</field>
             <field name="res_model">property.property_admin</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+    </record>
+     <!-- client create owner view -->
+    <record id="view_owner_beehive_users_simple_form" model="ir.ui.view">
+            <field name="name">owner_beehive.simplified.form</field>
+            <field name="model">property.property_owner</field>
+            <field name="priority">1</field>
+            <field name="arch" type="xml">
+                <form string="Nuevo Propietario">
+                    <sheet>
+                        <field name="id" invisible="1"/>
+                        <div class="alert alert-info text-center mb-3" attrs="{'invisible': [('id', '>', 0)]}" role="alert">
+                            Estas invitando a un nuevo Propietario.
+                        </div>
+                        <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium"}'/>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1><field name="name" required="1"/></h1>
+                            <field name="email" invisible="1"/>
+                            <label for="login" class="oe_edit_only" string="Email Address"/>
+                            <h2>
+                                <field name="login"
+                                        placeholder="email@yourcompany.com"/>
+                            </h2>
+                            <label for="company_id" class="oe_edit_only" groups="base.group_multi_company"/>
+                            <field name="company_id" context="{'user_preference': 0}" groups="base.group_multi_company"/>
+                        </div>
+                        <group>
+                            <label for="groups_id" string="Permisos de acceso"
+                                    attrs="{'invisible': [('id', '>', 0)]}" groups="base.group_no_one"/>
+                            <div attrs="{'invisible': [('id', '>', 0)]}" groups="base.group_no_one">
+                                <field name="groups_id" readonly="0" widget="many2many_tags" options="{'color_field': 'color'}" style="display: inline;"/> You will be able to define additional access rights by editing the newly created user under the Settings / Users menu.
+                            </div>
+                            <field name="documento" widget="phone"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="mobile" widget="phone"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+    </record>
+    <record id="action_beehive_owner" model="ir.actions.act_window">
+            <field name="name">Propietarios</field>
+            <field name="res_model">property.property_owner</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
     </record>
