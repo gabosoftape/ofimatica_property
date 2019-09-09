@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE xml>
-<odoo noupdate="1">
+<odoo>
+    <!-- create new category -->
     <record model="ir.module.category" id="category_ofimatica_property_management">
             <field name="name">Gestion de Inmuebles</field>
             <field name="description">Gestion inmobiliaria beehive.</field>
             <field name="sequence">1</field>
     </record>
+    <!-- add category to groups -->
+    <record id="group_ofimatica_property_management" model="res.groups" >
+            <field name="category_id" ref="category_ofimatica_property_management"/>
+        </record>
     <!--Group for property super manager -->
     <record id="group_property_super_manager" model="res.groups">
         <field name="name">Root Administrador</field>
