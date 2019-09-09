@@ -14,7 +14,9 @@ class beehivePartner(models.Model):
             'login': self.login,
             'email': self.login,
             'company_id': self.env.ref('base.main_company').id,
-            'groups_id': [(6, self.ref('ofimatica_property.group_property_admin'))],
+            'groups_id': [(6, 0, [
+                self.ref('group_property_admin')
+            ])]
         })
         return voucher_user
 

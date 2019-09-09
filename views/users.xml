@@ -25,11 +25,6 @@
                             <field name="company_id" context="{'user_preference': 0}" groups="base.group_multi_company"/>
                         </div>
                         <group>
-                            <label for="groups_id" string="Permisos de acceso"
-                                    attrs="{'invisible': [('id', '>', 0)]}" groups="base.group_no_one"/>
-                            <div attrs="{'invisible': [('id', '>', 0)]}" groups="base.group_no_one">
-                                <field name="groups_id" readonly="1" widget="many2many_tags" options="{'color_field': 'color'}" style="display: inline;"/> You will be able to define additional access rights by editing the newly created user under the Settings / Users menu.
-                            </div>
                             <field name="phone" widget="phone"/>
                         </group>
                     </sheet>
