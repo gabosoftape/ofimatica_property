@@ -8,7 +8,7 @@
                     <sheet>
                         <field name="id" invisible="1"/>
                         <div class="alert alert-info text-center mb-3" attrs="{'invisible': [('id', '>', 0)]}" role="alert">
-                            You are inviting a new user.
+                            Estas invitando a un nuevo usuario.
                         </div>
                         <field name="image" widget='image' class="oe_avatar" options='{"preview_image": "image_medium"}'/>
                         <div class="oe_title">
