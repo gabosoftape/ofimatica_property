@@ -18,7 +18,6 @@
         <field name="name">Administrador</field>
         <field name="category_id" ref="ofimatica_property.category_ofimatica_property"/>
         <field name="implied_ids" eval="[(4, ref('ofimatica_property.group_property_super_manager')), (4, ref('ofimatica_property.group_property_manager'))]"/>
-        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
     </record>
     <!--Group for property manager -->
     <record id="group_property_admin" model="res.groups">
