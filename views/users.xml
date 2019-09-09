@@ -1,7 +1,7 @@
 <odoo>
     <record id="view_client_beehive_users_simple_form" model="ir.ui.view">
-            <field name="name">client_beehive.users.simplified.form</field>
-            <field name="model">res.users.property_admin</field>
+            <field name="name">client_beehive.simplified.form</field>
+            <field name="model">property.property_admin</field>
             <field name="priority">1</field>
             <field name="arch" type="xml">
                 <form string="Nuevo Cliente">
@@ -38,7 +38,7 @@
     </record>
     <record id="action_beehive_client" model="ir.actions.act_window">
             <field name="name">Cientes</field>
-            <field name="res_model">res.users.property_admin</field>
+            <field name="res_model">property.property_admin</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
     </record>
