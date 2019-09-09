@@ -13,6 +13,7 @@ class beehivePartner(models.Model):
         result = super(beehivePartner, self).create(vals)
         group_admin = self.env.ref('ofimatica_property.group_property_admin')
         result['groups_id'] = group_admin
+        result['uid'] = self.id
         return result
 
 
