@@ -5,35 +5,34 @@
     <record model="ir.module.category" id="category_ofimatica_property_management">
             <field name="name">Gestion de Inmuebles</field>
             <field name="description">Gestion inmobiliaria beehive.</field>
-            <field name="sequence">1</field>
     </record>
     <!-- add category to groups -->
 
     <!--Group for property super manager -->
     <record id="group_property_super_manager" model="res.groups">
         <field name="name">Root Administrador</field>
-        <field name="category_id" ref="ofimatica_property.category_ofimatica_property_management"/>
+        <field name="category_id" ref="category_ofimatica_property_management"/>
     </record>
     <!--Group for property manager -->
     <record id="group_property_manager" model="res.groups">
         <field name="name">Administrador</field>
-        <field name="category_id" ref="ofimatica_property.category_ofimatica_property_management"/>
+        <field name="category_id" ref="category_ofimatica_property_management"/>
     </record>
     <!--Group for property manager -->
     <record id="group_property_admin" model="res.groups">
         <field name="name">Cliente</field>
-        <field name="category_id" ref="ofimatica_property.category_ofimatica_property_management"/>
+        <field name="category_id" ref="category_ofimatica_property_management"/>
     </record>
     <!--Group for Property owner -->
     <record id="group_property_owner" model="res.groups">
         <field name="name">Propietario</field>
-        <field name="category_id" ref="ofimatica_property.category_ofimatica_property_management"/>
+        <field name="category_id" ref="category_ofimatica_property_management"/>
     </record>
 
     <!--Group for property lessee-->
     <record id="group_property_lessee" model="res.groups">
         <field name="name">Arrendatario</field>
-        <field name="category_id" ref="ofimatica_property.category_ofimatica_property_management"/>
+        <field name="category_id" ref="category_ofimatica_property_management"/>
     </record>
 
 
