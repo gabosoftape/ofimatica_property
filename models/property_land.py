@@ -18,15 +18,11 @@ class PropertyLand(models.Model):
     sector = fields.Char(string="Sector catastral")
     bloc_fizic = fields.Char(string="Cedula catastral")
     name = fields.Char(string="Nombre de Cliente")
-
-    carte = fields.Char(string="Carte funciară")
-    utr = fields.Char(string="UTR")
-    cod = fields.Char()
     empresa_admin_doc_type = fields.Selection([('nit','Empresa Administradora'),('cc','Persona Natural')], string="Tipo de Administracion")
 # aqui van los atributos de la primera entrega.
     empresa_admin = fields.Char('Nombre de Empresa Administradora')
     empresa_admin_nit = fields.Char('Nit')
-    representante_legal = fields.Many2one('res.users',string="Representante legal")
+    representante_legal = fields.Char(string="Representante legal")
     administrador_delegado = fields.Many2one('res.users',string="Administrador Delegado")
     area_total = fields.Float(string="Area Total")
     area_comun = fields.Float(string="Area Comun" )
