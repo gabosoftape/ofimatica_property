@@ -9,8 +9,7 @@ from datetime import datetime
 
 
 class beehiveCompanies(models.Model):
-    _name = 'res.company'
-    _inherit = 'mail.thread'
+    _inherit = 'res.company'
 
     location_type = fields.Many2one('property.land.type', string="Tipo de inmueble")
     tarla = fields.Char('Telefono')  # required=True)
