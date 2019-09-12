@@ -25,3 +25,7 @@ class beehiveLessee(models.Model):
     land_id = fields.Many2one('property.land', string="Conjunto asociado")
     building_id = fields.Many2one('property.building', string='Inmueble asociado')
     patern_id = fields.Many2one('res.user', string="Propietario asociado")
+    
+#class updateResUsers(models.Model):
+#    _inherit = "res.users"
+#    land_id = fields.Many2one('property.land', string="Conjunto asociado")
