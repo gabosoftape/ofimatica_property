@@ -8,10 +8,8 @@ from odoo import models, fields, api
 from datetime import datetime
 
 
-class PropertyLand(models.Model):
-    _name = 'property.land'
-    _description = "Clientes"
-    _inherit = 'property.property'
+class beehiveCompanies(models.Model):
+    _inherit = 'res.company'
 
     location_type = fields.Many2one('property.land.type', string="Tipo de inmueble")
     tarla = fields.Char('Telefono')  # required=True)
@@ -50,3 +48,5 @@ class propertyBuildingTypes(models.Model):
     codigo = fields.Char('Codigo')
     nombre = fields.Char('Nombre')
     descripcion = fields.Char('Descripcion')
+
+
