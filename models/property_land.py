@@ -25,6 +25,8 @@ class beehiveCompanies(models.Model):
     area_total = fields.Float(string="Area Total")
     area_comun = fields.Float(string="Area Comun" )
     localidad = fields.Many2one('property.localidad',string="Localidad")
+    active = fields.Boolean(default=True)
+    nit = fields.Char(string="NIT")
 
 class tipoDePropiedad(models.Model):
     _name = 'property.land.type'
