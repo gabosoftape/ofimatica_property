@@ -27,6 +27,30 @@ class beehiveCompanies(models.Model):
     localidad = fields.Many2one('property.localidad',string="Localidad")
     active = fields.Boolean(default=True)
     nit = fields.Char(string="NIT")
+    doc_count = fields.Integer(string="Numero de documentos", compute='_get_attached_docs')
+    foto = fields.Binary(required=True)
+    note = fields.Text()
+
+    @api.multi
+    def _get_attached_docs(self):
+        for record in self:
+            domain = [('res_model', '=', self._name), ('res_id', '=', record.id)]
+            record.doc_count = self.env['ir.attachment'].search_count(domain)
+
+    @api.multi
+    def attachment_tree_view(self):
+        domain = [('res_model', '=', self._name), ('res_id', 'in', self.ids)]
+        return {
+            'name': 'Documentos',
+            'domain': domain,
+            'res_model': 'ir.attachment',
+            'type': 'ir.actions.act_window',
+            'view_id': False,
+            'view_mode': 'kanban,tree,form',
+            'view_type': 'form',
+            'limit': 80,
+            'context': "{'default_res_model': '%s','default_res_id': %d}" % (self._name, self.id)
+        }
 
 class tipoDePropiedad(models.Model):
     _name = 'property.land.type'
