@@ -56,8 +56,8 @@ class tipoDePropiedad(models.Model):
     _name = 'property.land.type'
     _rec_name = 'nombre'
 
-    codigo = fields.Char('Referencia', required=True)
-    nombre = fields.Char('Nombre', required=True)
+    codigo = fields.Char('ID', required=True)
+    nombre = fields.Char('Tipo de Copropiedad', required=True)
     descripcion = fields.Char('Descripcion')
 
 class localidadbehive(models.Model):
