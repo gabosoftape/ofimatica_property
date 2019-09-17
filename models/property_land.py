@@ -11,7 +11,7 @@ from datetime import datetime
 class beehiveCompanies(models.Model):
     _inherit = 'res.company'
 
-    location_type = fields.Many2one('property.land.type', string="Tipo de inmueble")
+    location_type = fields.Many2one('property.land.type', string="Tipo de Copropiedad")
     tarla = fields.Char('Telefono')  # required=True)
     sector = fields.Char(string="Sector catastral")
     bloc_fizic = fields.Char(string="Cedula catastral")
