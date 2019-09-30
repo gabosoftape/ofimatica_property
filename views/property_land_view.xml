@@ -5,7 +5,7 @@
 
         <record id="view_property_land_tree" model="ir.ui.view">
             <field name="name">Clientes</field>
-            <field name="model">res.company</field>
+            <field name="model">property.company</field>
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <tree string="Companies">
@@ -20,7 +20,7 @@
 
         <record id="view_property_land_form" model="ir.ui.view">
             <field name="name">Nuevo Cliente</field>
-            <field name="model">res.company</field>
+            <field name="model">property.company</field>
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <form>
@@ -100,7 +100,7 @@
 
         <record id="view_property_land_filter" model="ir.ui.view">
             <field name="name">Cliente</field>
-            <field name="model">res.company</field>
+            <field name="model">property.company</field>
             <field name="type">search</field>
             <field name="arch" type="xml">
                 <search string="Search">
@@ -120,7 +120,7 @@
 
         <record id="action_property_land" model="ir.actions.act_window">
             <field name="name">Clientes</field>
-            <field name="res_model">res.company</field>
+            <field name="res_model">property.company</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form,pivot</field>
         </record>
