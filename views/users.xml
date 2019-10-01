@@ -81,11 +81,6 @@
                             </h2>
                         </div>
                         <group>
-                            <label for="groups_id" string="Permisos de acceso"
-                                    attrs="{'invisible': [('id', '>', 0)]}" groups="base.group_no_one"/>
-                            <div attrs="{'invisible': [('id', '>', 0)]}" groups="base.group_no_one">
-                                <field name="groups_id" readonly="0" widget="many2many_tags" options="{'color_field': 'color'}" style="display: inline;"/> You will be able to define additional access rights by editing the newly created user under the Settings / Users menu.
-                            </div>
                             <field name="phone" widget="phone"/>
                         </group>
                     </sheet>
