@@ -46,9 +46,42 @@ class beehiveOwner(models.Model):
     _name = "property.property_owner"
     _inherit = "res.users"
 
+    name = fields.Char('Nombre')
+    login = fields.Char('Login')
+    email = fields.Char('Correo Electronico')
+    phone = fields.Char('Telefono')
     documento = fields.Char('No. Documento')
     land_id = fields.Many2one('property.land', string="Conjunto Asociado")
     building_id = fields.Many2one('property.building', string="Inmueble asociado")
+    image = fields.Binary('Imagen')
+    partner_id = fields.Many2one('res.partner', ondelete='restrict',
+                                 string='Related Partner', help='Partner-related data of the user')
+    land_id = fields.Many2one('property.land', string="Conjunto asociado")
+    employee_id = fields.Many2one('hr.employee',
+                                  string='Empleado relacionado', ondelete='restrict', auto_join=True,
+                                  help='Employee-related data of the user')
+
+    @api.model
+    def create(self, vals):
+        owner_group = self.env.ref('ofimatica_property.group_property_owner')
+        new_user = self.env['res.users'].create({
+            'name': vals['name'],
+            'login': vals['login'],
+            'email': vals['email'],
+            'company_id': self.env.ref('base.main_company').id,
+            'groups_id': [(6, 0, [owner_group.id, self.env.ref('base.group_user').id])]
+        })
+        result = super(beehiveOwner, self).create(vals)
+        result['partner_id'] = self.env['res.partner'].sudo().create({'name': vals['name'],
+                                                                      'email': vals['email'],
+                                                                      'company_id': self.env.ref(
+                                                                        'base.main_company').id})
+        result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
+                                                                       'user_id': new_user.id,
+                                                                       'address_home_id': result['partner_id'].id,
+                                                                       'company_id': self.env.ref(
+                                                                           'base.main_company').id})
+        return result
 
 class beehiveLessee(models.Model):
     _name = "property.property_lessee"
