@@ -17,42 +17,22 @@ class beehivePartner(models.Model):
 
     @api.model
     def create(self, vals):
-        is_active = vals.get('is_active', False)
-        if is_active:
-            vals['is_active'] = True
-        else:
-            vals['is_active'] = True
-        group_id = vals.get('res_group_id', False)
-        login = vals.get('login', False)
-        if login:
-            vals['login'] = login.lower()
-            vals['email'] = vals['login']
-            user = self.env['res.users'].search([('login', '=', vals['login'])])
-            if user:
-                raise ValidationError('El usuario ya existe.')
-            else:
-                admin_group = self.env.ref('ofimatica_property.group_property_admin')
-                # Create a custom user User
-                self.env['res.users'].create({
-                    'name': vals['name'],
-                    'login': vals['login'],
-                    'email': vals['email'],
-                    'company_id': self.env.ref('base.main_company').id,
-                    'groups_id':
-                        admin_group,
+       # admin_group = self.env.ref('ofimatica_property.group_property_admin')
+        # Create a custom user User
+        #self.env['res.users'].create({
+        #    'name': vals['name'],
+        #    'login': vals['login'],
+        #    'email': vals['email'],
+        #    'company_id': self.env.ref('base.main_company').id,
+        #    'groups_id':
+        #       admin_group,
+        #})
+        """This code is to create an employee while creating an user."""
 
-                })
-                # This code is to create an employee while creating an user.
-                result = super(beehivePartner, self).create(vals)
-                result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
-                                                                               'user_id': result['id'],
-                                                                               'address_home_id': result[
-                                                                                   'partner_id'].id})
-                partner = self.env['res.partner'].search([('id', '=', user.partner_id.id)])
-                if partner:
-                    partner.write({'email': vals['login']})
-
-
+        result = super(beehivePartner, self).create(vals)
+        result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
+                                                                       'user_id': result['id'],
+                                                                       'address_home_id': result['partner_id'].id})
         return result
 
 
