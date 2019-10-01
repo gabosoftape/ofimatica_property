@@ -19,7 +19,6 @@ class PropertyProperty(models.AbstractModel):
 
     name = fields.Char(string="Nombre")
     foto = fields.Binary()
-    street = fields.Char(string="Direccion")
     street2 = fields.Char()
     zip = fields.Char(string="Codigo Postal", change_default=True)
     city = fields.Char(string="Ciudad")
