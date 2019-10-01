@@ -30,7 +30,7 @@
                         </div>
                         <group string="Informacion de Inmueble">
                             <group string="Identification">
-                                <field name="can_edit_detail" groups="ofimatica_property.group_property_admin,ofimatica_property.group_property_super_manager"/>
+                                <field name="can_edit_detail" groups="ofimatica_property.group_property_super_manager"/>
                                 <field name="type_prop"/>
                                 <field name="administrator_id"/>
                             </group>
