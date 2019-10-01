@@ -9,11 +9,10 @@
             <field name="priority" eval="1"/>
             <field name="arch" type="xml">
                 <tree string="Companies">
-                    <field name="sequence" widget="handle"/>
                     <field name="name"/>
-                    <field name="partner_id"/>
+                    <field name="administrador_delegado"/>
                     <field name="location_type"/>
-                    <field name="city"/>
+                    <field name="ciudad"/>
                 </tree>
             </field>
         </record>
