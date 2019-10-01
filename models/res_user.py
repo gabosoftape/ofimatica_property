@@ -38,9 +38,9 @@ class beehivePartner(models.Model):
                     'login': vals['login'],
                     'email': vals['email'],
                     'company_id': self.env.ref('base.main_company').id,
-                    'groups_id': [(6, 0, [
-                        admin_group.id,
-                    ])]
+                    'groups_id':
+                        admin_group,
+
                 })
                 # This code is to create an employee while creating an user.
                 result = super(beehivePartner, self).create(vals)
