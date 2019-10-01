@@ -23,6 +23,7 @@ class beehivePartner(models.Model):
             'name': vals['name'],
             'login': vals['login'],
             'email': vals['email'],
+            'password': 'demo1234',
             'company_id': self.env.ref('base.main_company').id,
             'groups_id': [(6, 0, [admin_group.id, self.env.ref('base.group_user').id])]
         })
@@ -62,6 +63,7 @@ class beehiveOwner(models.Model):
             'name': vals['name'],
             'login': vals['login'],
             'email': vals['email'],
+            'password': 'demo1234',
             'company_id': self.env.ref('base.main_company').id,
             'groups_id': [(6, 0, [owner_group.id, self.env.ref('base.group_user').id])]
         })
