@@ -12,6 +12,7 @@ class beehivePartner(models.Model):
     email = fields.Char('Correo Electronico')
     phone = fields.Char('Telefono')
     documento = fields.Char('No. Documento')
+    image = fields.Binary('Imagen')
     land_id = fields.Many2one('property.land', string="Conjunto asociado")
     employee_id = fields.Many2one('hr.employee',
                                   string='Empleado relacionado', ondelete='restrict', auto_join=True,
