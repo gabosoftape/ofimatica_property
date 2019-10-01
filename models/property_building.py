@@ -40,7 +40,6 @@ class PropertyBuilding(models.Model):
     aditional_room = fields.Text('Habitaciones adicionales')
     property_services = fields.Text('Servicios Publicos')
     society_services = fields.Text('Servicios Internoss')
-    street = fields.Char(required=True)
     note = fields.Text('Descripcion')
     can_edit_detail = fields.Boolean(compute='_compute_can_edit_detail')
 
