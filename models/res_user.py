@@ -105,7 +105,6 @@ class beehivePartner(models.Model):
                         each))
                 self.env.cr.commit()
         # Above code is for add/delete groups in employee form -->End
-
         if is_active:
             self.env.cr.execute("""select id from res_users where faculty_id = """ + str(self.id))
             uid = self.env.cr.fetchone()
@@ -119,7 +118,7 @@ class beehivePartner(models.Model):
                     self.env.cr.commit()
         elif is_active == False:
             faculty_user.write({'active': False})
-        result = super(faculty, self).write(values)
+        result = super(beehivePartner, self).write(values)
         return result
 
 class beehiveOwner(models.Model):

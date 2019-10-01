@@ -11,7 +11,7 @@
             </field>
         </record>
     <!-- heredar vista simplificada usuario normal -->
-        <record id="client_beehive_users_simple_form" model="ir.ui.view">
+        <!--record id="client_beehive_users_simple_form" model="ir.ui.view">
             <field name="name">Crear Nuevo Cliente Beehive</field>
             <field name="model">res.users</field>
             <field name="inherit_id" ref="base.view_users_simple_form"/>
@@ -20,7 +20,7 @@
                     <field name="groups_id" readonly="0" widget="many2many_tags" options="{'color_field': 'color'}" style="display: inline;"/> You will be able to define additional access rights by editing the newly created user under the Settings / Users menu.
                 </field>
             </field>
-        </record>
+        </record -->
     <!-- behive client -->
     <record id="view_client_beehive_users_simple_form" model="ir.ui.view">
             <field name="name">client_beehive.simplified.form</field>
