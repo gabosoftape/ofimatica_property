@@ -12,6 +12,7 @@ class beehiveCompanies(models.Model):
     _name = 'property.company'
 
     sequence = fields.Float('secuencia')
+    partner_id = fields.Many2one('res.partner', string='Contacto Asociado')
     location_type = fields.Many2one('property.land.type', string="Tipo de Copropiedad")
     tarla = fields.Char('Telefono')  # required=True)
     sector = fields.Char(string="Sector catastral")
