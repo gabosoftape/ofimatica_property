@@ -13,7 +13,7 @@ class beehivePartner(models.Model):
     phone = fields.Char('Telefono')
     documento = fields.Char('No. Documento')
     image = fields.Binary('Imagen')
-    partner_id = fields.Many2one('res.partner', required=True, ondelete='restrict', auto_join=True,
+    partner_id = fields.Many2one('res.partner', ondelete='restrict',
                                  string='Related Partner', help='Partner-related data of the user')
     land_id = fields.Many2one('property.land', string="Conjunto asociado")
     employee_id = fields.Many2one('hr.employee',
@@ -35,7 +35,6 @@ class beehivePartner(models.Model):
         #})
         """This code is to create an employee while creating an user."""
         customer = self.env['res.partner'].create({'name': vals['name'], 'email': vals['email']})
-        self.partner_id = customer
         result = super(beehivePartner, self).create(vals)
         result['partner_id'] = customer
         result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
