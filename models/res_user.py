@@ -6,8 +6,11 @@ from odoo.odoo.exceptions import ValidationError
 
 class beehivePartner(models.Model):
     _name = "property.property_admin"
-    _inherit = "res.users"
 
+    name = fields.Char('Nombre')
+    login = fields.Char('Login')
+    email = fields.Char('Correo Electronico')
+    phone = fields.Char('Telefono')
     documento = fields.Char('No. Documento')
     land_id = fields.Many2one('property.land', string="Conjunto asociado")
     employee_id = fields.Many2one('hr.employee',
