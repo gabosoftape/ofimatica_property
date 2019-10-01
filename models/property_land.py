@@ -10,7 +10,6 @@ from datetime import datetime
 
 class beehiveCompanies(models.Model):
     _name = 'property.company'
-    _inherit = 'res.company'
 
     location_type = fields.Many2one('property.land.type', string="Tipo de Copropiedad")
     tarla = fields.Char('Telefono')  # required=True)
@@ -31,6 +30,11 @@ class beehiveCompanies(models.Model):
     doc_count = fields.Integer(string="Numero de documentos", compute='_get_attached_docs')
     foto = fields.Binary(required=True)
     note = fields.Text()
+
+    @api.model
+    def create(self, vals):
+        result = super(beehiveCompanies, self).create(vals)
+        return result
 
     @api.multi
     def _get_attached_docs(self):
