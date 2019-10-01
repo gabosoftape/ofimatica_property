@@ -79,8 +79,6 @@
                                 <field name="login"
                                         placeholder="email@yourcompany.com"/>
                             </h2>
-                            <label for="company_id" class="oe_edit_only" groups="base.group_multi_company"/>
-                            <field name="company_id" context="{'user_preference': 0}" groups="base.group_multi_company"/>
                         </div>
                         <group>
                             <label for="groups_id" string="Permisos de acceso"
