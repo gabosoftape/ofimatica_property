@@ -44,7 +44,6 @@ class beehivePartner(models.Model):
 
 class beehiveOwner(models.Model):
     _name = "property.property_owner"
-    _inherit = "res.users"
 
     name = fields.Char('Nombre')
     login = fields.Char('Login')
