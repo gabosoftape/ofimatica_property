@@ -41,104 +41,14 @@ class PropertyBuilding(models.Model):
     property_services = fields.Text('Servicios Publicos')
     society_services = fields.Text('Servicios Internoss')
     note = fields.Text('Descripcion')
-    can_edit_detail = fields.Boolean(compute='_compute_can_edit_detail')
+    can_edit_detail = fields.Boolean(default=False)
 
-    def _compute_can_edit_detail(self):
-        self.can_edit_detail = self.env.user.has_group('ofimatica_property.group_property_owner')
+    @api.model
+    def create(self, vals):
+        result = super(PropertyBuilding, self).create(vals)
+        result['can_edit_detail'] = True
+        return result
 
-    @api.onchange('purpose_parent_id')
-    def onchange_purpose_parent_id(self):
-        if self.purpose_id.parent_id != self.purpose_parent_id:
-            self.purpose_id = False
-
-        if self.purpose_parent_id:
-            return {'domain': {'purpose_id': [('parent_id', '=', self.purpose_parent_id.id)]}}
-        else:
-            return {'domain': {'purpose_id': []}}
-
-    @api.onchange('purpose_id')
-    def onchange_purpose_id(self):
-        self.purpose_parent_id = self.purpose_id.parent_id
-
-    @api.depends('room_ids.surface_cleaning_floor', 'room_ids.floor_type')
-    def _cleaning_floor(self):
-        surface_cleaning_carpet = 0.0
-        surface_cleaning_linoleum = 0.0
-        surface_cleaning_wood = 0.0
-
-        for room in self.room_ids:
-            if room.floor_type == 'c':
-                surface_cleaning_carpet += room.surface_cleaning_floor
-            if room.floor_type == 'l':
-                surface_cleaning_linoleum += room.surface_cleaning_floor
-            if room.floor_type == 'w':
-                surface_cleaning_wood += room.surface_cleaning_floor
-
-        self.surface_cleaning_carpet = surface_cleaning_carpet
-        self.surface_cleaning_linoleum = surface_cleaning_linoleum
-        self.surface_cleaning_wood = surface_cleaning_wood
-
-    @api.depends('room_ids.surface_cleaning_windows')
-    def _cleaning_windows(self):
-        surface_cleaning_windows = 0.0
-        for room in self.room_ids:
-            surface_cleaning_windows += room.surface_cleaning_windows
-        self.surface_cleaning_windows = surface_cleaning_windows
-
-    @api.depends('room_ids.surface_cleaning_doors')
-    def _cleaning_doors(self):
-        surface_cleaning_doors = 0.0
-        for room in self.room_ids:
-            surface_cleaning_doors += room.surface_cleaning_doors
-        self.surface_cleaning_doors = surface_cleaning_doors
-
-    @api.depends('room_ids.surface_disinsection')
-    def _compute_surface_disinsection(self):
-        surface_disinsection = 0.0
-        for room in self.room_ids:
-            surface_disinsection += room.surface_disinsection
-        self.surface_disinsection = surface_disinsection
-
-    @api.depends('room_ids.surface', 'surface_terraces', 'surface_cleaned_ext', 'surface_derating_ext')
-    def _compute_all_surface(self):
-        surface = {'office': 0.0, 'meeting': 0.0, 'lobby': 0.0, 'staircase': 0.0, 'kitchens': 0.0, 'sanitary': 0.0,
-                   'laboratory': 0.0, 'it_endowments': 0.0, 'garage': 0.0, 'warehouse': 0.0, 'log_warehouse': 0.0,
-                   'archive': 0.0, 'cloakroom': 0.0, 'premises': 0.0, 'access': 0.0, }
-
-        for room in self.room_ids:
-            surface[room.usage] += room.surface
-
-        self.surface_office = surface['office']
-        self.surface_meeting = surface['meeting']
-        self.surface_lobby = surface['lobby']
-        self.surface_staircase = surface['staircase']
-        self.surface_kitchens = surface['kitchens']
-        self.surface_sanitary = surface['sanitary']
-        self.surface_laboratory = surface['laboratory']
-        self.surface_it_endowments = surface['it_endowments']
-        self.surface_garage = surface['garage']
-        self.surface_warehouse = surface['warehouse']
-        self.surface_log_warehouse = surface['log_warehouse']
-        self.surface_archive = surface['archive']
-        self.surface_cloakroom = surface['cloakroom']
-        self.surface_premises = surface['premises']
-        self.surface_access = surface['access']
-
-        self.surface_common = surface['meeting'] + surface['lobby'] + surface['staircase'] + \
-                              surface['kitchens'] + surface['sanitary'] + surface['access']
-
-        self.surface_useful = surface['office'] + self.surface_common + surface['laboratory'] + \
-                              surface['it_endowments'] + surface['garage'] + surface['warehouse'] + \
-                              surface['log_warehouse'] + surface['archive'] + \
-                              surface['cloakroom'] + surface['premises']
-
-        self.surface_cleaned_adm = self.surface_common + surface['office']
-        self.surface_cleaned_ind = surface['garage'] + surface['cloakroom'] + self.surface_terraces
-
-        self.surface_cleaned_tot = self.surface_cleaned_adm + self.surface_cleaned_ind + self.surface_cleaned_ext
-
-        self.surface_derating_int = self.surface_useful
-        self.surface_derating = self.surface_derating_ext + self.surface_derating_int
 
 
 class PropertyFeatures(models.Model):

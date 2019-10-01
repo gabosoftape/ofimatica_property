@@ -30,7 +30,7 @@
                         </div>
                         <group string="Informacion de Inmueble">
                             <group string="Identification">
-                                <field name="can_edit_detail" invisible="1"/>
+                                <field name="can_edit_detail" groups="ofimatica_property.group_property_admin"/>
                                 <field name="type_prop"/>
                                 <field name="administrator_id"/>
                             </group>
@@ -42,7 +42,7 @@
                             </group>
 
                         </group>
-                        <notebook>
+                        <notebook attrs="{'invisible': [('can_edit_detail', '=', False)]}">
                             <page string="Detalles de Inmueble">
                                 <group string="Acerca de la propiedad">
                                     <field name="type_prop" attrs="{'readonly': [('can_edit_detail', '=', False)]}" options="{'no_quick_create': True, 'no_create_edit' : True}"/>
