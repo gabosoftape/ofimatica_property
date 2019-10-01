@@ -49,6 +49,7 @@ class beehivePartner(models.Model):
                                                                                'address_home_id': result[
                                                                                    'partner_id'].id})
                 if user:
+                    print(user)
                     partner = self.env['res.partner'].search([('id', '=', user.partner_id.id)])
                     if partner:
                         partner.write({'email': vals['login']})
