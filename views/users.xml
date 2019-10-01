@@ -1,5 +1,5 @@
 <odoo>
-    <record id="view_users_form_inherit" model="ir.ui.view">
+    <!--record id="view_users_form_inherit" model="ir.ui.view">
             <field name="name">res.users.form</field>
             <field name="model">res.users</field>
             <field name="inherit_id" ref="base.view_users_form"/>
@@ -9,7 +9,7 @@
                                         attrs="{'invisible': [('id', '=', False)]}"/>
                 </xpath>
             </field>
-        </record>
+        </record-->
     <!-- heredar vista simplificada usuario normal -->
         <!--record id="client_beehive_users_simple_form" model="ir.ui.view">
             <field name="name">Crear Nuevo Cliente Beehive</field>
