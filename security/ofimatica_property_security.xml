@@ -37,7 +37,7 @@
    <record id="unique_owner_user_rule" model="ir.rule">
         <field name="name">Ver solo Mis propiedades</field>
         <field name="model_id" ref="ofimatica_property.model_property_building"/>
-        <field name="domain_force">[('administrator_id','like',user)]</field>
+        <field name="domain_force">[('administrator_id','==',user)]</field>
         <field name="groups" eval="[(4, ref('ofimatica_property.group_property_owner'))]"/>
         <field name="perm_unlink" eval="0"/>
         <field name="perm_write" eval="1"/>
