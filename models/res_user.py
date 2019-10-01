@@ -31,7 +31,13 @@ class beehivePartner(models.Model):
             'company_id': self.env.ref('base.main_company').id,
             'groups_id': [(6, 0, [admin_group.id, self.env.ref('base.group_user').id])]
         })
-        return new_user
+        result = super(beehivePartner, self).create(vals)
+        result['partner_id'] = self.env['res.partner'].sudo().create({'name': vals['name'],
+                                                                      'email': vals['email']})
+        result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
+                                                                       'user_id': new_user.id,
+                                                                       'address_home_id': result['partner_id'].id})
+        return result
 
 
 class beehiveOwner(models.Model):
