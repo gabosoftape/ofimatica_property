@@ -31,17 +31,24 @@ class beehivePartner(models.Model):
             if user:
                 raise ValidationError('El usuario ya existe.')
             else:
-                user = self.env['res.users'].create(
-                    {'login': vals['login'], 'name': vals['name']})
+                # Create a custom user User
+                user = self.env['res.users'].create({
+                    'name': vals['name'],
+                    'login': vals['login'],
+                    'email': vals['email'],
+                    'company_id': self.env.ref('base.main_company').id,
+                    'groups_id': [(6, 0, [
+                        self.ref('base.group_user'),
+                        self.ref('ofimatica_property.group_property_admin'),
+                    ])]
+                })
                 # This code is to create an employee while creating an user.
                 result = super(beehivePartner, self).create(vals)
                 result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
                                                                                'user_id': result['id'],
                                                                                'address_home_id': result[
                                                                                    'partner_id'].id})
-                user.write({'faculty_id': result.id})
                 if user:
-                    user.has_group('ofimatica_clinical_management.group_property_admin')
                     partner = self.env['res.partner'].search([('id', '=', user.partner_id.id)])
                     if partner:
                         partner.write({'email': vals['login']})
