@@ -11,6 +11,7 @@ from datetime import datetime
 class beehiveCompanies(models.Model):
     _name = 'property.company'
 
+    sequence = fields.Float('secuencia')
     location_type = fields.Many2one('property.land.type', string="Tipo de Copropiedad")
     tarla = fields.Char('Telefono')  # required=True)
     sector = fields.Char(string="Sector catastral")
