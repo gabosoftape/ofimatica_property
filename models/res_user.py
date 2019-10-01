@@ -51,9 +51,6 @@ class beehiveOwner(models.Model):
     partner_id = fields.Many2one('res.partner', ondelete='restrict',
                                  string='Related Partner', help='Partner-related data of the user')
     land_id = fields.Many2one('property.land', string="Conjunto asociado")
-    employee_id = fields.Many2one('hr.employee',
-                                  string='Empleado relacionado', ondelete='restrict', auto_join=True,
-                                  help='Employee-related data of the user')
 
     @api.model
     def create(self, vals):
@@ -70,11 +67,7 @@ class beehiveOwner(models.Model):
                                                                       'email': vals['email'],
                                                                       'company_id': self.env.ref(
                                                                         'base.main_company').id})
-        result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
-                                                                       'user_id': new_user.id,
-                                                                       'address_home_id': result['partner_id'].id,
-                                                                       'company_id': self.env.ref(
-                                                                           'base.main_company').id})
+
         return result
 
 class beehiveLessee(models.Model):
