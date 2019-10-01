@@ -41,12 +41,14 @@ class PropertyBuilding(models.Model):
     property_services = fields.Text('Servicios Publicos')
     society_services = fields.Text('Servicios Internoss')
     note = fields.Text('Descripcion')
-    can_edit_detail = fields.Boolean(default=False)
+    can_edit_detail = fields.Boolean(compute='_compute_can_edit_detail')
+
+    def _compute_can_edit_detail(self):
+        self.can_edit_detail = self.env.user.has_group('ofimatica_property.group_property_owner')
 
     @api.model
     def create(self, vals):
         result = super(PropertyBuilding, self).create(vals)
-        result['can_edit_detail'] = True
         return result
 
 
