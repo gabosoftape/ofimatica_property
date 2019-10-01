@@ -23,24 +23,16 @@ class beehivePartner(models.Model):
 
     @api.model
     def create(self, vals):
-       # admin_group = self.env.ref('ofimatica_property.group_property_admin')
-        # Create a custom user User
-        #self.env['res.users'].create({
-        #    'name': vals['name'],
-        #    'login': vals['login'],
-        #    'email': vals['email'],
-        #    'company_id': self.env.ref('base.main_company').id,
-        #    'groups_id':
-        #       admin_group,
-        #})
-        """This code is to create an employee while creating an user."""
-        customer = self.env['res.partner'].create({'name': vals['name'], 'email': vals['email']})
-        result = super(beehivePartner, self).create(vals)
-        result['partner_id'] = customer
-        result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
-                                                                       'user_id': result['id'],
-                                                                       'address_home_id': result['partner_id'].id})
-        return result
+        admin_group = self.env.ref('ofimatica_property.group_property_admin')
+        new_user = self.env['res.users'].create({
+            'name': vals['name'],
+            'login': vals['login'],
+            'email': vals['email'],
+            'company_id': self.env.ref('base.main_company').id,
+            'groups_id':
+               admin_group,
+        })
+        return new_user
 
 
 class beehiveOwner(models.Model):
