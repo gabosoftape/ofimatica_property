@@ -38,7 +38,7 @@ class beehivePartner(models.Model):
                     'email': vals['email'],
                     'company_id': self.env.ref('base.main_company').id,
                     'groups_id': [(6, 0, [
-                        self.ref('base.group_user'),
+                        self.ref('base.group_partner_manager'),
                         self.ref('ofimatica_property.group_property_admin'),
                     ])]
                 })
