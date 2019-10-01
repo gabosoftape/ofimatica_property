@@ -11,6 +11,7 @@ class PropertyBuilding(models.Model):
     _name = 'property.building'
     _description = "Inmuebles"
     _inherit = 'property.property'
+    _rec_name = 'nombre'
 
     active = fields.Boolean(default=True)
     land_id = fields.Many2one('property.land', string='Conjunto')
