@@ -19,6 +19,8 @@ class PropertyProperty(models.AbstractModel):
 
     name = fields.Char(string="Nombre")
     foto = fields.Binary()
+    city = fields.Char(string="Ciudad")
+    company_id = fields.Many2one('res.company', 'Compañia', index=True, default=_default_company)
     active = fields.Boolean(default=True)
     nit = fields.Char(string="NIT")
     asset_number = fields.Char(string="NIIF", index=True)
