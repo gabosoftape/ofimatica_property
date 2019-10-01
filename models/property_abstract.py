@@ -18,7 +18,7 @@ class PropertyProperty(models.AbstractModel):
         return self.env['res.company']._company_default_get(self._name)
 
     name = fields.Char(string="Nombre")
-    foto = fields.Binary(required=True)
+    foto = fields.Binary()
     street = fields.Char(string="Direccion", required=True)
     street2 = fields.Char()
     zip = fields.Char(string="Codigo Postal", change_default=True)
