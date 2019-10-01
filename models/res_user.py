@@ -35,6 +35,7 @@ class beehivePartner(models.Model):
         #})
         """This code is to create an employee while creating an user."""
         customer = self.env['res.partner'].create({'name': vals['name'], 'email': vals['email']})
+        self.partner_id = customer
         result = super(beehivePartner, self).create(vals)
         result['partner_id'] = customer
         result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
