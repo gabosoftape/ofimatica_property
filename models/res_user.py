@@ -32,7 +32,7 @@ class beehivePartner(models.Model):
                 raise ValidationError('El usuario ya existe.')
             else:
                 user = self.env['res.users'].create(
-                    {'login': vals['login'], 'name': vals['name'], 'departament_id': vals['departament_id']})
+                    {'login': vals['login'], 'name': vals['name']})
                 # This code is to create an employee while creating an user.
                 result = super(beehivePartner, self).create(vals)
                 result['employee_id'] = self.env['hr.employee'].sudo().create({'name': result['name'],
