@@ -31,6 +31,7 @@ class beehiveCompanies(models.Model):
     doc_count = fields.Integer(string="Numero de documentos", compute='_get_attached_docs')
     foto = fields.Binary(required=True)
     note = fields.Text()
+    city = fields.Char(string="Ciudad")
 
     @api.model
     def create(self, vals):
