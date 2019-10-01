@@ -19,7 +19,12 @@ class PropertyProperty(models.AbstractModel):
 
     name = fields.Char(string="Nombre")
     foto = fields.Binary()
+    street = fields.Char(string="Direccion")
+    street2 = fields.Char()
+    zip = fields.Char(string="Codigo Postal", change_default=True)
     city = fields.Char(string="Ciudad")
+    state_id = fields.Many2one("res.country.state", string='Estado')
+    country_id = fields.Many2one('res.country', string='País', ondelete='restrict')
     company_id = fields.Many2one('res.company', 'Compañia', index=True, default=_default_company)
     active = fields.Boolean(default=True)
     nit = fields.Char(string="NIT")
