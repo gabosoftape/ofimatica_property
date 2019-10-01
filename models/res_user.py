@@ -72,6 +72,7 @@ class beehiveOwner(models.Model):
 
 class beehiveLessee(models.Model):
     _name = "property.property_lessee"
+    _inherit = 'res.users'
 
     documento = fields.Char('No. Documento')
     land_id = fields.Many2one('property.land', string="Conjunto asociado")
