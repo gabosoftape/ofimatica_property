@@ -1,9 +1,4 @@
 from odoo import api, fields, models, tools, SUPERUSER_ID, _
-from datetime import datetime
-
-from odoo.odoo.exceptions import ValidationError
-
-
 class beehivePartner(models.Model):
     _name = "property.property_admin"
 
