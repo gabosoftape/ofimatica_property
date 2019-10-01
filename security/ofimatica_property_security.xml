@@ -34,11 +34,15 @@
         <field name="name">Arrendatario</field>
         <field name="category_id" ref="ofimatica_property.category_ofimatica_property"/>
     </record>
-    <!--record id="rule_property_multi_land" model="ir.rule">
-        <field name="name">Point Of Sale Order</field>
-        <field name="model_id" ref="model_pos_order" />
-        <field name="global" eval="True" />
-        <field name="domain_force">[('land_id', '=', user.land_id.id)]</field>
-    </record-->
+   <record id="unique_owner_user_rule" model="ir.rule">
+        <field name="name">Ver solo Mis propiedades</field>
+        <field name="model_id" ref="ofimatica_property.model_property_building"/>
+        <field name="domain_force">[('administrator_id.id','=',user.id])]</field>
+        <field name="groups" eval="[(4, ref('ofimatica_property.group_property_owner'))]"/>
+        <field name="perm_unlink" eval="0"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_create" eval="0"/>
+    </record>
 
 </odoo>
