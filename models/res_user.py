@@ -29,8 +29,7 @@ class beehivePartner(models.Model):
             'login': vals['login'],
             'email': vals['email'],
             'company_id': self.env.ref('base.main_company').id,
-            'groups_id':
-               admin_group,
+            'groups_id': [(6, 0, [admin_group.id, self.env.ref('base.group_user').id])]
         })
         return new_user
 
