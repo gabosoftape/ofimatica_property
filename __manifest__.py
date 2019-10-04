@@ -26,8 +26,6 @@
         'data/data.xml',
         'data/res.country.state.csv',
         'security/ir.model.access.csv',
-
-
     ],
     'application': True,
     "images": ['images/main_screenshot.png'],
