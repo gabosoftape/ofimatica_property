@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <odoo>
     <data>
-        <menuitem name="Mi Registro" id="base.menu_property_app" sequence="25" web_icon="ofimatica_property,static/description/icon1.jpg"/>
+        <menuitem name="Mi Registro" id="base.menu_property_app" sequence="1" web_icon="ofimatica_property,static/description/icon1.jpg"/>
         <menuitem name="Mi Tablero" id="property_tablero" action="board.open_board_my_dash_action" parent="base.menu_property_app" groups="group_property_manager,group_property_super_manager,group_property_manager" sequence="10"/>
         <menuitem name="Gestion de Clientes" id="base.menu_property_reports"  parent="base.menu_property_app" sequence="20" groups="group_property_manager,group_property_super_manager,group_property_admin"/>
         <menuitem name="Gestion de inmuebles" id="base.menu_property_info" parent="base.menu_property_app" sequence="50" groups="group_property_admin,group_property_super_manager,group_property_owner"/>
