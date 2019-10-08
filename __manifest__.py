@@ -11,7 +11,8 @@
 
     "category": "Property",
     "depends": [
-        'mail', 'hr',
+        'mail',
+        'hr',
     ],
     "license": "LGPL-3",
     "data": [
