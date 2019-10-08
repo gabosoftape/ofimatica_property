@@ -34,7 +34,7 @@ class beehivePartner(models.Model):
                                                                        'user_id': new_user.id,
                                                                        'address_home_id': result['partner_id'].id,
                                                                        'company_id': self.env.ref('base.main_company').id})
-        user = self.env['res.users'].search(['id','=',new_user.id])
+        user = self.env['res.users'].search(['email','=',vals['email']])
         user.action_reset_password()
         return result
 
