@@ -26,7 +26,6 @@ class beehivePartner(models.Model):
             'company_id': self.env.ref('base.main_company').id,
             'groups_id': [(6, 0, [admin_group.id, self.env.ref('base.group_user').id])]
         })
-        new_user.action_reset_password()
         result = super(beehivePartner, self).create(vals)
         result['partner_id'] = self.env['res.partner'].sudo().create({'name': vals['name'],
                                                                       'email': vals['email'],
@@ -35,6 +34,8 @@ class beehivePartner(models.Model):
                                                                        'user_id': new_user.id,
                                                                        'address_home_id': result['partner_id'].id,
                                                                        'company_id': self.env.ref('base.main_company').id})
+        user = self.env['res.user'].search(['id','=',new_user.id])
+        user.action_reset_password()
         return result
 
 
@@ -63,12 +64,12 @@ class beehiveOwner(models.Model):
             'company_id': self.env.ref('base.main_company').id,
             'groups_id': [(6, 0, [owner_group.id, self.env.ref('base.group_user').id])]
         })
-        new_user.action_reset_password()
         result = super(beehiveOwner, self).create(vals)
         result['partner_id'] = self.env['res.partner'].sudo().create({'name': vals['name'],
                                                                       'email': vals['email'],
                                                                       'company_id': self.env.ref(
                                                                         'base.main_company').id})
+        new_user.action_reset_password()
 
         return result
 
