@@ -13,6 +13,13 @@
     "depends": [
         'mail',
         'hr',
+        'ofimatica_property_admin',
+        'ofimatica_liabilities',
+        'ofimatica_reservations',
+        'ofimatica_communities',
+        'ofimatica_events',
+        'ofimatica_news',
+        'ofimatica_communications',
     ],
     "license": "LGPL-3",
     "data": [
