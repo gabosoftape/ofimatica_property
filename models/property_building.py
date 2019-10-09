@@ -14,7 +14,11 @@ class PropertyBuilding(models.Model):
     _rec_name = 'nombre'
 
     active = fields.Boolean(default=True)
-    land_id = fields.Many2one('property.land', string='Conjunto')
+    state = fields.Selection(
+        [('nueva', 'Nueva'), ('asignada', 'Asignada'), ('no_asignada', 'No asignada'), ('abandonada', 'Abandonada'),
+         ('for_sale', 'Para La Venta'), ('moroso', 'Moroso'), ('done', 'Done')], string="Estado",
+        default="nueva", copy=False, track_visibility='onchange')
+    land_id = fields.Many2one('property.company', string='Conjunto')
     foto = fields.Binary('Foto')
     nombre = fields.Char('Nombre del inmueble')
     type_prop = fields.Many2one('building.type', string='Tipo de Inmueble')

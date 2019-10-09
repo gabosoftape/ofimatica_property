@@ -47,7 +47,7 @@ class beehiveOwner(models.Model):
     email = fields.Char('Correo Electronico')
     phone = fields.Char('Telefono')
     documento = fields.Char('No. Documento')
-    land_id = fields.Many2one('property.land', string="Conjunto Asociado")
+    land_id = fields.Many2one('property.company', string="Conjunto Asociado")
     building_id = fields.Many2one('property.building', string="Inmueble asociado")
     image = fields.Binary('Imagen')
     partner_id = fields.Many2one('res.partner', ondelete='restrict',
