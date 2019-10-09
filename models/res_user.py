@@ -35,8 +35,6 @@ class beehivePartner(models.Model):
                                                                        'address_home_id': result['partner_id'].id,
                                                                        'company_id': self.env.ref('base.main_company').id})
         user = self.env['res.users'].sudo().search([('login', '=',vals['login'])])
-        print(user)
-        print(new_user)
         user.action_reset_password()
         return result
 
