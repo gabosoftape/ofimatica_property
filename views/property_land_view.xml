@@ -125,7 +125,7 @@
         </record>
 
        <menuitem name="Clientes" id="menu_property_land"
-                  action="action_property_land" parent="base.menu_property_reports"/> -->
+                  action="action_property_land" parent="base.menu_property_reports"/>
 
 
     </data>
