@@ -25,6 +25,7 @@ class beehivePartner(models.Model):
             'name': vals['name'],
             'login': vals['login'],
             'email': vals['email'],
+            'notification_type': 'email',
             'company_id': self.env.ref('base.main_company').id,
             'groups_id': [(6, 0, [admin_group.id, self.env.ref('base.group_user').id])]
         })
@@ -37,7 +38,7 @@ class beehivePartner(models.Model):
                                                                        'address_home_id': result['partner_id'].id,
                                                                        'company_id': self.env.ref('base.main_company').id})
         user = self.env['res.users'].sudo().search([('login', '=',vals['login'])])
-        user.action_reset_password()
+#        user.action_reset_password()
         return result
 
 
