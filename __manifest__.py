@@ -13,7 +13,6 @@
     "depends": [
         'mail',
         'hr',
-        'ofimatica_property',
         'ofimatica_property_admin',
         'ofimatica_liabilities',
         'ofimatica_reservations',
