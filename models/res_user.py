@@ -1,4 +1,6 @@
 from odoo import api, fields, models, tools, SUPERUSER_ID, _
+
+
 class beehivePartner(models.Model):
     _name = "property.property_admin"
 
